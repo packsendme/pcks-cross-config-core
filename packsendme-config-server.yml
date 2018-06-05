@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 PackSendMeApp:
   maxOrders: 10
+=======
+PackSendMeApp:
+  maxOrders: 10
+>>>>>>> 29141f9add11a6b89e3ddebf0b1ff968caa3ee8f
   minOrders: 1
