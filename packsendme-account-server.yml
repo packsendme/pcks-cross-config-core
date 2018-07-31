@@ -29,10 +29,3 @@ spring:
       mongodb.port: 27017
       mongodb.uri: mongodb://192.241.133.13/packsendDB
       mongo.repositories.enabled: true
-   
-   authserver:
-        hostname: http://localhost:9092
-    security:
-      oauth2:
-        resource:
-          userInfoUri: ${authserver.hostname}/user
