@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: packsendme.microservice
+    hostname: 192.241.133.13
   client:
     registerWithEureka: false
     fetchRegistry: false
