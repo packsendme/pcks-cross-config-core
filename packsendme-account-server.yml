@@ -6,12 +6,13 @@ eureka:
     hostname: 192.241.133.13
     port: 9091
     leaseRenewalIntervalInSeconds: 5   
-    preferIpAddress: true
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+    healthcheck:
+      enabled: true
   server:
     wait-time-in-ms-when-sync-empty: 3000
 
