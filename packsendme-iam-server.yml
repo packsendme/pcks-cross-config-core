@@ -5,6 +5,8 @@ eureka:
   instance:
     hostname: 192.241.133.13
     port: 9091
+    leaseRenewalIntervalInSeconds: 5   
+    preferIpAddress: true
   client:
     registerWithEureka: true
     fetchRegistry: true
