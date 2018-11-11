@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: 192.241.133.13
+    hostname: localhost
     port: 9091
     leaseRenewalIntervalInSeconds: 5   
     preferIpAddress: true
