@@ -1,0 +1,33 @@
+server:
+  port: 9097
+
+eureka:
+  instance:
+    hostname: 192.241.133.13
+    port: 9091
+    leaseRenewalIntervalInSeconds: 5   
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+
+security:
+    oauth2:
+        client:
+            access-token-validity-seconds: 1800
+            authorized-grant-types: password,refresh_token
+            client-id: admin
+            client-secret: $2a$10$jJFbSMGC2xsOqIlYYLqRouBDGRsvnP.egfdw3MutRXzHdhNoNnBA6
+            resource-ids: resources
+            scope: read,write
+
+spring:
+   data:
+      mongodb.host: 192.241.133.13
+      mongodb.port: 27017
+      mongodb.uri: mongodb://192.241.133.13/packsendDB
+      mongo.repositories.enabled: true
