@@ -27,7 +27,7 @@ security:
 
 spring:
    data:
-      mongodb.host: 192.241.133.13
+      mongodb.host: 167.172.152.184
       mongodb.port: 27017
-      mongodb.uri: mongodb://192.241.133.13/packsendDB
+      mongodb.uri: mongodb://167.172.152.184/PackSendMe
       mongo.repositories.enabled: true
