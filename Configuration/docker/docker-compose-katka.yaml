@@ -1,0 +1,40 @@
+version: '2'
+
+networks:
+  sb:
+   driver: bridge
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:3.2.1
+    hostname: zookeeper
+    networks:
+     - sb
+    ports:
+      - '32181:32181'
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 32181
+
+  kafka1:
+    image: confluentinc/cp-kafka:3.2.1
+    networks:
+      - sb
+    ports:
+      - '9092:9092'
+      - '29092:29092'
+    depends_on:
+      - zookeeper
+
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:32181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_LISTENERS: INTERNAL://0.0.0.0:19092,EXTERNAL://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://localhost:19092,EXTERNAL://167.172.152.184:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      # Following line is needed for Kafka versions 0.11+
+      # in case you run less than 3 Kafka brokers in your
+      # cluster because the broker config
+      # `offsets.topic.replication.factor` (default: 3)
+      # is now enforced upon topic creation
+      # KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
