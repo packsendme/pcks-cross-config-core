@@ -25,6 +25,10 @@ security:
             resource-ids: resources
             scope: read,write
 
+kafka:
+  topic:
+    boot: topicBusinessRuleSouthAmerica
+    
 spring:
    data:
       mongodb.host: 167.172.152.184
@@ -33,7 +37,7 @@ spring:
       mongo.repositories.enabled: true
       
    kafka:
-     listener_topics: topicBusinessRuleSouthAmerica,topicRoadwayBRESouthAmerica,topicAirwayBRESouthAmerica,topicMaritimewayBRESouthAmerica
+     listener_topics: topicBusinessRuleSouthAmerica, topicRoadwayBRESouthAmerica, topicAirwayBRESouthAmerica, topicMaritimewayBRESouthAmerica
      consumer:
         bootstrap-servers: 167.172.152.184:9092
         group-id: group-id
@@ -72,3 +76,5 @@ spring:
           - name: topicMaritimewayBRESouthAmerica
             partitions: 5
             replication_factor: 1
+ 
+
