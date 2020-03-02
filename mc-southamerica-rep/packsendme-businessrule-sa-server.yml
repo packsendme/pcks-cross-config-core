@@ -27,7 +27,10 @@ security:
 
 kafka:
   topic:
-    boot: topicBusinessRuleSouthAmerica
+    businessrule: topicBusinessRuleSouthAmerica
+    roadwaybre: topicRoadwayBRESouthAmerica
+    airwaybre: topicAirwayBRESouthAmerica
+    maritimewaybre: topicMaritimewayBRESouthAmerica
     
 spring:
    data:
@@ -37,44 +40,15 @@ spring:
       mongo.repositories.enabled: true
       
    kafka:
-     listener_topics: topicBusinessRuleSouthAmerica, topicRoadwayBRESouthAmerica, topicAirwayBRESouthAmerica, topicMaritimewayBRESouthAmerica
      consumer:
         bootstrap-servers: 167.172.152.184:9092
         group-id: group-id
         auto-offset-reset: earliest
         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
         value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        topic:
-          - name: topicBusinessRuleSouthAmerica
-            partitions: 5
-            replication_factor: 1
-          - name: topicRoadwayBRESouthAmerica
-            partitions: 5
-            replication_factor: 1
-          - name: topicAirwayBRESouthAmerica
-            partitions: 5
-            replication_factor: 1
-          - name: topicMaritimewayBRESouthAmerica
-            partitions: 5
-            replication_factor: 1
         
      producer:
         bootstrap-servers: 167.172.152.184:9092
         key-serializer: org.apache.kafka.common.serialization.StringSerializer
         value-serializer: org.apache.kafka.common.serialization.StringSerializer
         batch-size: 100000
-        topic:
-          - name: topicBusinessRuleSouthAmerica
-            partitions: 5
-            replication_factor: 1
-          - name: topicRoadwayBRESouthAmerica
-            partitions: 5
-            replication_factor: 1
-          - name: topicAirwayBRESouthAmerica
-            partitions: 5
-            replication_factor: 1
-          - name: topicMaritimewayBRESouthAmerica
-            partitions: 5
-            replication_factor: 1
- 
-
