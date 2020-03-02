@@ -27,10 +27,8 @@ security:
 
 kafka:
   topic:
-    businessrule: topicBusinessRuleSouthAmerica
-    roadwaybre: topicRoadwayBRESouthAmerica
-    airwaybre: topicAirwayBRESouthAmerica
-    maritimewaybre: topicMaritimewayBRESouthAmerica
+    boot: topicBusinessRuleSouthAmerica
+
     
 spring:
    data:
