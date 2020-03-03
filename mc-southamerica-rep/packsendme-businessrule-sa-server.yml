@@ -28,7 +28,7 @@ security:
 kafka:
   topic:
     boot: topicBusinessRuleSouthAmerica
-
+    roadway: topicRoadwayBRESouthAmerica
     
 spring:
    data:
