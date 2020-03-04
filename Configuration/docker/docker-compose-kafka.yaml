@@ -32,6 +32,7 @@ services:
       KAFKA_LISTENERS: INTERNAL://0.0.0.0:19092,EXTERNAL://0.0.0.0:9092
       KAFKA_ADVERTISED_LISTENERS: INTERNAL://localhost:19092,EXTERNAL://167.172.152.184:9092
       KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_DELETE_TOPIC_ENABLE: "true" 
       # Following line is needed for Kafka versions 0.11+
       # in case you run less than 3 Kafka brokers in your
       # cluster because the broker config
