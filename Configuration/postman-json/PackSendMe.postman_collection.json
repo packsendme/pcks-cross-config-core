@@ -1,0 +1,1359 @@
+{
+	"info": {
+		"_postman_id": "ece350db-a4ee-4898-b8a7-dcbd1bd43ed6",
+		"name": "PackSendMe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "PaymentAccount",
+					"item": [
+						{
+							"name": "AddPaymentCardAccount",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"payName\" : \"Ricardo Della Marzochi\",\n    \"payCodenum\" : \"66666666\",\n    \"payEntity\" : \"MasterCard\",\n    \"payType\" : \"CARD_PAY\",\n    \"payExpiry\": \"2019-07-23\",\n    \"payStatus\" : \"Activo\",\n    \"payValue\" : \"1234\",\n    \"dateCreation\" : \"2019-07-23T18:23:07.182Z\"\n}"
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment/+55656656436",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment",
+										"+55656656436"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddPaymentVoucherAccount",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\" : \"+55656656436\",\n    \"payName\" : \"Voucher MIllll\",\n    \"payCodenum\" : \"2423423423423\",\n    \"payEntity\" : \"TicketVoucher\",\n    \"payType\" : \"VOUCHER_PAY\",\n    \"payExpiry\": \"2019-07-23\",\n    \"payStatus\" : \"Activo\",\n    \"payValue\" : \"50,00\",\n    \"dateCreation\" : \"2019-07-23T18:23:07.182Z\"\n}"
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddPaymentPromotionAccount",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\" : \"+55656656436\",\n    \"payName\" : \"Promotion Total-Free\",\n    \"payCodenum\" : \"111111111111\",\n    \"payEntity\" : \"TicketPromotion\",\n    \"payType\" : \"PROMOTION_PAY\",\n    \"payExpiry\": \"2019-07-30\",\n    \"payStatus\" : \"Activo\",\n    \"payValue\" : \"50,00\",\n    \"dateCreation\" : \"2019-07-23T18:23:07.182Z\"\n}\n"
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "loadPaymentAccount",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment/+54666333555",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment",
+										"+54666333555"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatePaymentCardAccount",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"payCodenum\" : \"4766642595517330\",\n  \"payCountry\" : \"BR\",\n  \"payExpiry\" : \"0735\",\n  \"payName\" : \"\",\n  \"payType\" : \"CARD_PAY\",\n  \"payStatus\" : \"Validation-Card\",\n  \"payValue\" : \"777\",\n  \"payEntity\" : \"VisaCard\",\n  \"dateOperation\" : \"2019-09-19T18:49:57.169\"\n}"
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment/+5536331620/4766642595517330",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment",
+										"+5536331620",
+										"4766642595517330"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeletePaymentAccount",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\" : \"+34656656436\",\n    \"payName\" : \"Ricardo Della Marzochi\",\n    \"payCodenum\" : \"1234567890\",\n    \"payGeneralType\" : \"MASTER\",\n    \"payType\" : \"CREDITCARD_PAY\",\n    \"payExpiry\": \"2019-07-23\",\n    \"payStatus\" : \"Activo\",\n    \"payValue\" : \"1234\",\n    \"dateCreation\" : \"2019-07-23T18:23:07.182Z\",\n     \"dateUpdate\" : \"2019-07-23T18:23:07.182Z\"\n}\n    \n \n"
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findPaymentCardByNum",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment/+5536331620/4473016479004885",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment",
+										"+5536331620",
+										"4473016479004885"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CheckCardPay",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9095/payment/card/validate/5571526867757397/BR/MasterCard/333/0228",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9095",
+									"path": [
+										"payment",
+										"card",
+										"validate",
+										"5571526867757397",
+										"BR",
+										"MasterCard",
+										"333",
+										"0228"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Load",
+					"item": [
+						{
+							"name": "LoadUserAccount",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/+55363316266/load",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"+55363316266",
+										"load"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LoadPersonalNameAccount",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/personalname/+5536331620",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"personalname",
+										"+5536331620"
+									]
+								},
+								"description": "Load all name the Account (FirstName / LastName)"
+							},
+							"response": []
+						},
+						{
+							"name": "LoadAccountByField",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/+55363316266/username",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"+55363316266",
+										"username"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Manager",
+					"item": [
+						{
+							"name": "UpdateValidateSMSAndUsername",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9093/iam/manager/+5536331638/+5536331639/0545/2019-11-03T19:07:26.702",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9093",
+									"path": [
+										"iam",
+										"manager",
+										"+5536331638",
+										"+5536331639",
+										"0545",
+										"2019-11-03T19:07:26.702"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "SMS",
+					"item": [
+						{
+							"name": "GeneratorSMSCode",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9097/sms/+5536331639",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9097",
+									"path": [
+										"sms",
+										"+5536331639"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FindSMSCode",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9097/sms/+5536331638/2662",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9097",
+									"path": [
+										"sms",
+										"+5536331638",
+										"2662"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteSMSCode",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9097/sms/+5536331620/",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9097",
+									"path": [
+										"sms",
+										"+5536331620",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Address",
+					"item": [
+						{
+							"name": "UpdateAddress",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"city\" : \" Lisboa\",\n  \"country\" : \" Portugal\",\n  \"type\" : \"addressHome\",\n  \"address\" : \"Rua Augusta\",\n  \"main\" : \"main\"\n}"
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/address/+5536331620",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"address",
+										"+5536331620"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "beb6550c-49a2-46c4-b4e1-5af971dfe23b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "17e66980-e648-4979-9a9f-5a4ebdb138f4",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Country",
+			"item": [
+				{
+					"name": "FindAllCountry",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://192.241.133.13:9096/country/BR",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9096",
+							"path": [
+								"country",
+								"BR"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindCountryByCode",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://192.241.133.13:9096/country/BR",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9096",
+							"path": [
+								"country",
+								"BR"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddCountry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codcountry\": \"+93\",\n    \"namecountry\": \"Afghanistan (+93)\",\n    \"nameimagecountry\": \"iconAfghanistan.png\",\n    \"formatnumbercountry\": \"070 123 4567\"\n}"
+						},
+						"url": {
+							"raw": "http://192.241.133.13:9096/country",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9096",
+							"path": [
+								"country"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "ValidateCard",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"payCodenum\" : \"6534 5435 4534 5345\",\n  \"payValue\" : \"343\",\n  \"payExpiry\" : \"34 / 53\",\n  \"payEntity\" : \"DiscoverCard\",\n  \"payCountry\" : \"+55\"\n}"
+						},
+						"url": {
+							"raw": "http://192.241.133.13:9095/payment/card/validate/6011511394177422/BR/DiscoverCard/000/0525",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9095",
+							"path": [
+								"payment",
+								"card",
+								"validate",
+								"6011511394177422",
+								"BR",
+								"DiscoverCard",
+								"000",
+								"0525"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IAM",
+			"item": [
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9093/iam/access/+5536331620/ricardo1",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9093",
+									"path": [
+										"iam",
+										"access",
+										"+5536331620",
+										"ricardo1"
+									]
+								},
+								"description": "Check username (number) and password"
+							},
+							"response": []
+						},
+						{
+							"name": "FristAccessValidation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9093/iam/identity/+5536331620/2019-09-26T17:27:59.700",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9093",
+									"path": [
+										"iam",
+										"identity",
+										"+5536331620",
+										"2019-09-26T17:27:59.700"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "IdentitySMSCode",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9093/iam/identity/sms/+5555555/2255",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9093",
+									"path": [
+										"iam",
+										"identity",
+										"sms",
+										"+5555555",
+										"2255"
+									]
+								},
+								"description": "Validate SMS Code"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Manager",
+					"item": [
+						{
+							"name": "UpdatePassword",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\" : \"+5536331620\",\n  \"password\" : \"1234567890\",\n  \"dateOperation\" : \"2019-10-13T21:54:19.536\",\n  \"activated\" : \"true\",\n  \"resetPasswordKey\" : \"false\",\n  \"activationKey\" : \"23423\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9093/iam/manager/",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9093",
+									"path": [
+										"iam",
+										"manager",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Simulation",
+			"item": [
+				{
+					"name": "Roadway-sa",
+					"item": [
+						{
+							"name": "Google-API-Place",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://maps.googleapis.com/maps/api/distancematrix/json?origins=Sao Paulo&destinations=Belo Horizonte&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA",
+									"protocol": "https",
+									"host": [
+										"maps",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"maps",
+										"api",
+										"distancematrix",
+										"json"
+									],
+									"query": [
+										{
+											"key": "origins",
+											"value": "Sao Paulo"
+										},
+										{
+											"key": "destinations",
+											"value": "Belo Horizonte"
+										},
+										{
+											"key": "key",
+											"value": "AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Roadway-sa",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Roadway-euro",
+					"item": [
+						{
+							"name": "Michelin-API-Place",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://apir.viamichelin.com/apir/1/geocode4f.xml?country=bra&city=sao paulo&address=10 promenade des anglais&authkey=RESTGP20200102102035337800692548",
+									"protocol": "http",
+									"host": [
+										"apir",
+										"viamichelin",
+										"com"
+									],
+									"path": [
+										"apir",
+										"1",
+										"geocode4f.xml"
+									],
+									"query": [
+										{
+											"key": "country",
+											"value": "bra"
+										},
+										{
+											"key": "city",
+											"value": "sao paulo"
+										},
+										{
+											"key": "address",
+											"value": "10 promenade des anglais"
+										},
+										{
+											"key": "authkey",
+											"value": "RESTGP20200102102035337800692548"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street&location=42.3675294,-71.186966&radius=10000&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street&location=42.3675294,-71.186966&radius=10000&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"place",
+								"textsearch",
+								"json"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "123+main+street"
+								},
+								{
+									"key": "location",
+									"value": "42.3675294,-71.186966"
+								},
+								{
+									"key": "radius",
+									"value": "10000"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "BusinessRule",
+			"item": [
+				{
+					"name": "BusinessRule-SA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_rule\": \"0010101\",\n    \"date_creation\": 1581712756681,\n    \"date_change\": null,\n    \"status\": \"Active\",\n    \"roadway\": {\n        \"roadCar\": {\n            \"distance_max_car\": \"1\",\n            \"weight_max_car\": \"1\",\n            \"rate_availability_car\": \"1\"\n        },\n        \"roadBicycle\": {\n            \"distance_max_bicycle\": \"1\",\n            \"weight_max_bicycle\": \"1\",\n            \"rate_availability_bicycle\": \"1\"\n        },\n        \"roadMotorcycle\": {\n            \"distance_max_motorcycle\": \"1\",\n            \"weight_max_motorcycle\": \"1\",\n            \"rate_availability_motorcycle\": \"1\"\n        },\n        \"roadTrunk\": {\n            \"distance_max_truck\": \"1\",\n            \"weight_max_truck\": \"1\",\n            \"rate_availability_truck\": \"1\"\n        },\n        \"roadWalking\": {\n            \"distance_max_walking\": \"1\",\n            \"weight_max_walking\": \"1\",\n            \"rate_availability_walking\": \"1\"\n        }\n    },\n    \"maritimeway\": {\n        \"maritimeShipping\": {\n            \"distance_max_shipping\": \"1\",\n            \"weight_max_shipping\": \"1\",\n            \"rate_availability_shipping\": \"1\"\n        }\n    },\n    \"airway\": {\n        \"airplane\": {\n            \"weight_max_suitcase\": \"1\",\n            \"rate_availability_suitcase\": \"1\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Kafka.BRE",
+			"item": [
+				{
+					"name": "Add ExecutionBRE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_rule\": \"0010101\",\n\t\"date_creation\": 1582980943223,\n\t\"date_change\": null,\n\t\"status\": \"Active\",\n\t\"roadwaybre\": {\n\t\t\"roadCar\": {\n\t\t\t\"distance_max_car\": 1,\n\t\t\t\"weight_max_car\": 1,\n\t\t\t\"rate_availability_car\": 1\n\t\t},\n\t\t\"roadBicycle\": {\n\t\t\t\"distance_max_bicycle\": 1,\n\t\t\t\"weight_max_bicycle\": 1,\n\t\t\t\"rate_availability_bicycle\": 1\n\t\t},\n\t\t\"roadMotorcycle\": {\n\t\t\t\"distance_max_motorcycle\": 1,\n\t\t\t\"weight_max_motorcycle\": 1,\n\t\t\t\"rate_availability_motorcycle\": 1\n\t\t},\n\t\t\"roadTrunk\": {\n\t\t\t\"distance_max_truck\": 1,\n\t\t\t\"weight_max_truck\": 1,\n\t\t\t\"rate_availability_truck\": 1\n\t\t},\n\t\t\"roadWalking\": {\n\t\t\t\"distance_max_walking\": 1,\n\t\t\t\"weight_max_walking\": 1,\n\t\t\t\"rate_availability_walking\": 1\n\t\t}\n\t},\n\t\"maritimewaybre\": {\n\t\t\"maritimeShipping\": {\n\t\t\t\"distance_max_shipping\": 1,\n\t\t\t\"weight_max_shipping\": 1,\n\t\t\t\"rate_availability_shipping\": 1\n\t\t}\n\t},\n\t\"airwaybre\": {\n\t\t\"airplane\": {\n\t\t\t\"weight_max_suitcase\": 1,\n\t\t\t\"rate_availability_suitcase\": 1\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/executionbre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"executionbre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add-RoadwayBRE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_rule\": \"0010101\",\n\t\"date_creation\": 1582888973317,\n\t\"date_change\": null,\n\t\"status\": \"Active\",\n\t\"bicycleCosts\": {\n\t\t\"cost_distance_bicycle\": 1.0,\n\t\t\"cost_variable_bicycle\": 0.5,\n\t\t\"percentage_reshipping_bicycle\": 30.0,\n\t\t\"percentage_storage_bicycle\": 10.0\n\t},\n\t\"carCosts\": {\n\t\t\"cost_distance_car\": 1.5,\n\t\t\"cost_variable_car\": 2.5,\n\t\t\"percentage_reshipping_car\": 2.0,\n\t\t\"percentage_storage_car\": 3.2,\n\t\t\"percentage_cubage_car\": 4.1\n\t},\n\t\"motorcycleCosts\": {\n\t\t\"cost_distance_motorcycle\": 4.0,\n\t\t\"cost_variable_motorcycle\": 2.3,\n\t\t\"percentage_reshipping_motorcycle\": 0.5,\n\t\t\"percentage_storage_motorcycle\": 1.0\n\t},\n\t\"truckCosts\": {\n\t\t\"cost_distance_truck\": 1.0,\n\t\t\"cost_variable_truck\": 0.6,\n\t\t\"percentage_reshipping_truck\": 2.0,\n\t\t\"percentage_storage_truck\": 1.5,\n\t\t\"percentage_cubage_truck\": 5.0\n\t},\n\t\"walkingCosts\": {\n\t\t\"cost_distance_walking\": 1.0,\n\t\t\"cost_variable_walking\": 1.0,\n\t\t\"percentage_reshipping_walking\": 1.5,\n\t\t\"percentage_storage_walking\": 1.5\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/roadwaybre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"roadwaybre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add-AirwayBRE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_rule\": \"0010101\",\n\t\"date_creation\": 1582926503205,\n\t\"date_change\": null,\n\t\"status\": \"Active\",\n\t\"airplaneCosts\": {\n\t\t\"cost_suitcase_airplane\": 1.0,\n\t\t\"cost_variable_airplane\": 0.5,\n\t\t\"percentage_storage_airplane\": 30.0\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/airwaybre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"airwaybre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add-MaritimewayBRE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_rule\": \"0010101\",\n\t\"date_creation\": 1582914814192,\n\t\"date_change\": null,\n\t\"status\": \"Active\"\n}"
+						},
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/maritimebre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"maritimebre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find-ExecutionBRE",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/executionbre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"executionbre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find-RoadwayBRE",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/roadwaybre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"roadwaybre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find-AirwayBRE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/airwaybre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"airwaybre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find-MaritimewayBRE",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/maritimebre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"maritimebre"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	]
+}
