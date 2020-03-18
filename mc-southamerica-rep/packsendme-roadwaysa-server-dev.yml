@@ -1,5 +1,5 @@
 server:
-  port: 9100
+  port: 9098
 
 eureka:
   instance:
@@ -27,12 +27,12 @@ security:
 
 kafka:
   topic:
-    executionBRE: topicExecutionBRE_SA
     roadwayBRE: topicRoadwayBRE_SA
-    airwayBRE: topicAirwayBRE_SA
-    maritimewayBRE: topicMaritimewayBRE_SA
     
-    
+api:
+   url: https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&key={my}
+   key: AIzaSyDt5pgW0boE_KhyVZHpNAh
+   
 spring:
    kafka:
      consumer:
@@ -41,9 +41,4 @@ spring:
         auto-offset-reset: earliest
         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
         value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        
-     producer:
-        bootstrap-servers: 167.172.152.184:9092
-        key-serializer: org.apache.kafka.common.serialization.StringSerializer
-        value-serializer: org.apache.kafka.common.serialization.StringSerializer
-        batch-size: 100000
+  
