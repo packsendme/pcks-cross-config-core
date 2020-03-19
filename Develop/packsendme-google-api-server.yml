@@ -25,6 +25,12 @@ security:
             resource-ids: resources
             scope: read,write
 
+google:
+   api:
+      direction: https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}&key={my}
+      distance: https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&key={my}
+      key: AIzaSyDt5pgW0boE_KhyVZHpNAh
+
 spring:
    data:
       mongodb.host: 167.172.152.184
