@@ -27,8 +27,8 @@ security:
 
 api:
    tolls:
-      direction: https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}&key={my}
-      distance: https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&key={my}
+      direction: https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}&key={key}
+      distance: https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&key={key}
       key: AIzaSyDt5pgW0boE_KhyVZHpNAh
 
 spring:
