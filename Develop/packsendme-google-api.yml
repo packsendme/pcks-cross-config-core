@@ -1,5 +1,5 @@
 server:
-  port: 9019
+  port: 9099
 
 eureka:
   instance:
@@ -25,11 +25,11 @@ security:
             resource-ids: resources
             scope: read,write
 
-google:
-   api:
-      direction: https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}&key={my}
-      distance: https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&key={my}
-      key: AIzaSyDt5pgW0boE_KhyVZHpNAh
+api:
+   google:
+      tolls: https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}&key={key}
+      distance: https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&key={key}
+      key: AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA
 
 spring:
    data:
