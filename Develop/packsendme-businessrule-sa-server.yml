@@ -39,4 +39,4 @@ regis:
 spring:
    redis:
       host: 167.172.152.184
-      port: 6379"
+      port: 6379
