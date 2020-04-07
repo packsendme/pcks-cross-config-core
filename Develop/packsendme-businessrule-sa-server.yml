@@ -25,8 +25,8 @@ security:
             resource-ids: resources
             scope: read,write
 
-kafka:
-  topic:
+regis:
+  cache:
     executionBRE: topicExecutionBRE_SA
     roadwayBRE_SA_Instance: topicRoadwayBRE_SA_Instance
     roadwayBRE_SA_Costs: topicRoadwayBRE_SA_Costs
@@ -37,16 +37,6 @@ kafka:
     
     
 spring:
-   kafka:
-     consumer:
-        bootstrap-servers: 167.172.152.184:9092
-        group-id: group-id
-        auto-offset-reset: earliest
-        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        
-     producer:
-        bootstrap-servers: 167.172.152.184:9092
-        key-serializer: org.apache.kafka.common.serialization.StringSerializer
-        value-serializer: org.apache.kafka.common.serialization.StringSerializer
-        batch-size: 100000
+   redis:
+      host: 167.172.152.184
+      port: 6379"
