@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ece350db-a4ee-4898-b8a7-dcbd1bd43ed6",
+		"_postman_id": "9cac2119-75f7-4fc4-bf10-f02a6d2589f1",
 		"name": "PackSendMe",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -280,6 +280,7 @@
 							"response": []
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				},
 				{
@@ -591,7 +592,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://192.241.133.13:9096/country/BR",
+							"raw": "http://192.241.133.13:9095/country",
 							"protocol": "http",
 							"host": [
 								"192",
@@ -599,10 +600,9 @@
 								"133",
 								"13"
 							],
-							"port": "9096",
+							"port": "9095",
 							"path": [
-								"country",
-								"BR"
+								"country"
 							]
 						}
 					},
@@ -669,7 +669,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Payment",
@@ -717,7 +718,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "IAM",
@@ -822,6 +824,7 @@
 							"response": []
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				},
 				{
@@ -878,15 +881,15 @@
 			"name": "Simulation",
 			"item": [
 				{
-					"name": "Roadway-sa",
+					"name": "Google-API",
 					"item": [
 						{
-							"name": "Google-API-Place",
+							"name": "Google-API-Distancematrix",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://maps.googleapis.com/maps/api/distancematrix/json?origins=Sao Paulo&destinations=Belo Horizonte&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA",
+									"raw": "https://maps.googleapis.com/maps/api/distancematrix/json?origins=R. Bartolomeu de Gusmão, 119 - Vila Mariana, São Paulo - SP, 04111-020, Brasil&destinations=Av. Corrientes 820, C1007 CABA, Argentina&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA&units=metric&travel_mode=DRIVING",
 									"protocol": "https",
 									"host": [
 										"maps",
@@ -902,11 +905,56 @@
 									"query": [
 										{
 											"key": "origins",
-											"value": "Sao Paulo"
+											"value": "R. Bartolomeu de Gusmão, 119 - Vila Mariana, São Paulo - SP, 04111-020, Brasil"
 										},
 										{
 											"key": "destinations",
-											"value": "Belo Horizonte"
+											"value": "Av. Corrientes 820, C1007 CABA, Argentina"
+										},
+										{
+											"key": "key",
+											"value": "AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA"
+										},
+										{
+											"key": "units",
+											"value": "metric"
+										},
+										{
+											"key": "travel_mode",
+											"value": "DRIVING"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Google-API-Geolocation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://maps.googleapis.com/maps/api/geocode/json?latlng=-21.2600023,-63.4582865&sensor=false&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA",
+									"protocol": "https",
+									"host": [
+										"maps",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"maps",
+										"api",
+										"geocode",
+										"json"
+									],
+									"query": [
+										{
+											"key": "latlng",
+											"value": "-21.2600023,-63.4582865"
+										},
+										{
+											"key": "sensor",
+											"value": "false"
 										},
 										{
 											"key": "key",
@@ -918,15 +966,273 @@
 							"response": []
 						},
 						{
-							"name": "Roadway-sa",
+							"name": "Google-API-Directions",
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": ""
+									"raw": "https://maps.googleapis.com/maps/api/directions/json?origin=R. Bartolomeu de Gusmão, 119 - Vila Mariana, São Paulo - SP, 04111-020, Brasil&destination=Av. Corrientes 820, Buenos Aires, Argentina&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA&travel_mode=DRIVING&units=metric",
+									"protocol": "https",
+									"host": [
+										"maps",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"maps",
+										"api",
+										"directions",
+										"json"
+									],
+									"query": [
+										{
+											"key": "origin",
+											"value": "R. Bartolomeu de Gusmão, 119 - Vila Mariana, São Paulo - SP, 04111-020, Brasil"
+										},
+										{
+											"key": "destination",
+											"value": "Av. Corrientes 820, Buenos Aires, Argentina"
+										},
+										{
+											"key": "key",
+											"value": "AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA"
+										},
+										{
+											"key": "travel_mode",
+											"value": "DRIVING"
+										},
+										{
+											"key": "avoidTolls",
+											"value": "false",
+											"disabled": true
+										},
+										{
+											"key": "units",
+											"value": "metric"
+										}
+									]
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street&location=42.3675294,-71.186966&radius=10000&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street&location=42.3675294,-71.186966&radius=10000&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n",
+									"protocol": "https",
+									"host": [
+										"maps",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"maps",
+										"api",
+										"place",
+										"textsearch",
+										"json"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "123+main+street"
+										},
+										{
+											"key": "location",
+											"value": "42.3675294,-71.186966"
+										},
+										{
+											"key": "radius",
+											"value": "10000"
+										},
+										{
+											"key": "key",
+											"value": "AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "API-Distance",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"address_origin\" : \"R. Bartolomeu de Gusmão, 119 - Vila Mariana, São Paulo - SP, 04111-020, Brasil\",\r\n\t\"address_destination\" : \"Calle Plateros 326, Cusco 08002, Perú\",\r\n\t\"distances_places\" : 0,\r\n\t\"type_product\" : \"s\",\r\n\t\"weight_product\" : 10.1,\r\n\t\"type_delivery\" : \"0\",\r\n\t\"unity_measurement_weight\" : \"0\",\r\n\t\"unity_measurement_distance_txt\" : \"KM\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9099/api/google/distance",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9099",
+									"path": [
+										"api",
+										"google",
+										"distance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "API-Tolls",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"address_origin\" : \"R. Bartolomeu de Gusmão, 119 - Vila Mariana, São Paulo - SP, 04111-020, Brasil\",\r\n\t\"address_destination\" : \"Av. Corrientes 820, Buenos Aires, Argentina\",\r\n\t\"distances_places\" : 0,\r\n\t\"type_product\" : \"s\",\r\n\t\"weight_product\" : 10.1,\r\n\t\"type_delivery\" : \"0\",\r\n\t\"unity_measurement_weight\" : \"0\",\r\n\t\"unity_measurement_distance_txt\" : \"KM\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9099/api/google/tolls",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9099",
+									"path": [
+										"api",
+										"google",
+										"tolls"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CONS:Roadway-Instance-topic",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9100/bre/sa/roadway/topic/instance",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"bre",
+										"sa",
+										"roadway",
+										"topic",
+										"instance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ADD:Execution",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id_rule\": \"0010101\",\r\n\t\"date_creation\": 1586203202207,\r\n\t\"date_change\": null,\r\n\t\"status\": \"Active\",\r\n\t\"unity_measurement_weight\": \"KG\",\r\n\t\"unity_measurement_distance\": \"KM\",\r\n\t\"currency_cost\": \"R$\",\r\n\t\"roadwayInstance\": {\r\n\t\t\"weight_max_roadway\": 300.0,\r\n\t\t\"allows_continents_roadway\": false\r\n\t},\r\n\t\"maritimewayInstance\": {\r\n\t\t\"distance_min_maritime\": 1250.42,\r\n\t\t\"weight_min_maritime\": 1.0,\r\n\t\t\"allows_continents_maritime\": true\r\n\t},\r\n\t\"airwayInstance\": {\r\n\t\t\"distance_min_airway\": 4250.42,\r\n\t\t\"weight_max_airway\": 3222.0,\r\n\t\t\"allows_continents_airway\": true\r\n\t}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/execution",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"execution"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f8780982-a23f-469d-b3c9-00edbeb8a72b",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f30012cc-2ac2-4906-8248-4f63ec58e7c2",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
 						}
 					],
 					"protocolProfileBehavior": {},
@@ -984,48 +1290,6 @@
 					],
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
-				},
-				{
-					"name": "https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street&location=42.3675294,-71.186966&radius=10000&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street&location=42.3675294,-71.186966&radius=10000&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n",
-							"protocol": "https",
-							"host": [
-								"maps",
-								"googleapis",
-								"com"
-							],
-							"path": [
-								"maps",
-								"api",
-								"place",
-								"textsearch",
-								"json"
-							],
-							"query": [
-								{
-									"key": "query",
-									"value": "123+main+street"
-								},
-								{
-									"key": "location",
-									"value": "42.3675294,-71.186966"
-								},
-								{
-									"key": "radius",
-									"value": "10000"
-								},
-								{
-									"key": "key",
-									"value": "AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n"
-								}
-							]
-						}
-					},
-					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -1034,54 +1298,457 @@
 			"name": "BusinessRule",
 			"item": [
 				{
-					"name": "BusinessRule-SA",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
+					"name": "Roadway",
+					"item": [
+						{
+							"name": "ADD:RoadwayBRE",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"date_creation\": 1586189036009,\r\n\t\"date_change\": null,\r\n\t\"unity_measurement_weight\": \"KG\",\r\n\t\"unity_measurement_distance\": \"KM\",\r\n\t\"currency_cost\": \"R$\",\r\n\t\"status\": \"Active\",\r\n\t\"bicycle\": {\r\n\t\t\"distance_max_bicycle\": 10.0,\r\n\t\t\"weight_max_bicycle\": 30.0,\r\n\t\t\"percentage_rate_availability_bicycle\": 20.0\r\n\t},\r\n\t\"car\": {\r\n\t\t\"distance_max_car\": 10.0,\r\n\t\t\"weight_max_car\": 30.0,\r\n\t\t\"percentage_rate_availability_car\": 20.5\r\n\t},\r\n\t\"motorcycle\": {\r\n\t\t\"distance_max_motorcycle\": 10.2,\r\n\t\t\"weight_max_motorcycle\": 30.4,\r\n\t\t\"percentage_rate_availability_motorcycle\": 20.3\r\n\t},\r\n\t\"truck\": {\r\n\t\t\"allow_cross_continent_truck\": false,\r\n\t\t\"weight_max_truck\": 30.2,\r\n\t\t\"percentage_rate_availability_truck\": 20.5\r\n\t},\r\n\t\"walking\": {\r\n\t\t\"distance_max_walking\": 10.3,\r\n\t\t\"weight_max_walking\": 30.2,\r\n\t\t\"percentage_rate_availability_walking\": 20.4\r\n\t},\r\n\t\"costsCountry\": [{\r\n\t\t\"name_country\": \"Brazil\",\r\n\t\t\"bicycle\": {\r\n\t\t\t\"cost_weight_bicycle\": 10.0,\r\n\t\t\t\"cost_distance_bicycle\": 30.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 20.0,\r\n\t\t\t\"percentage_rate_availability\": 20.0\r\n\t\t},\r\n\t\t\"car\": {\r\n\t\t\t\"weight_cost\": 0.5,\r\n\t\t\t\"distance_cost\": 1.0,\r\n\t\t\t\"tolls_average_cost\": 0.7,\r\n\t\t\t\"fuel_average_cost\": 0.4,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.4,\r\n\t\t\t\"percentage_rate_availability\": 10.0\r\n\t\t},\r\n\t\t\"motorcycle\": {\r\n\t\t\t\"weight_cost\": 0.6,\r\n\t\t\t\"distance_cost\": 0.6,\r\n\t\t\t\"tolls_average_cost\": 0.6,\r\n\t\t\t\"fuel_average_cost\": 0.6,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.6,\r\n\t\t\t\"percentage_rate_availability\": 0.6\r\n\t\t},\r\n\t\t\"truck\": {\r\n\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\"distance_cost\": 0.8,\r\n\t\t\t\"tolls_average_cost\": 10.0,\r\n\t\t\t\"fuel_average_cost\": 20.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 12.5,\r\n\t\t\t\"percentage_rate_availability\": 0.4\r\n\t\t},\r\n\t\t\"walking\": {\r\n\t\t\t\"weight_cost\": 2.4,\r\n\t\t\t\"distance_cost\": 50.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 1.2,\r\n\t\t\t\"percentage_rate_availability\": 20.1\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Colombia\",\r\n\t\t\"bicycle\": {\r\n\t\t\t\"cost_weight_bicycle\": 10.0,\r\n\t\t\t\"cost_distance_bicycle\": 30.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 20.0,\r\n\t\t\t\"percentage_rate_availability\": 20.0\r\n\t\t},\r\n\t\t\"car\": {\r\n\t\t\t\"weight_cost\": 0.5,\r\n\t\t\t\"distance_cost\": 1.0,\r\n\t\t\t\"tolls_average_cost\": 0.7,\r\n\t\t\t\"fuel_average_cost\": 0.4,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.4,\r\n\t\t\t\"percentage_rate_availability\": 10.0\r\n\t\t},\r\n\t\t\"motorcycle\": {\r\n\t\t\t\"weight_cost\": 0.6,\r\n\t\t\t\"distance_cost\": 0.6,\r\n\t\t\t\"tolls_average_cost\": 0.6,\r\n\t\t\t\"fuel_average_cost\": 0.6,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.6,\r\n\t\t\t\"percentage_rate_availability\": 0.6\r\n\t\t},\r\n\t\t\"truck\": {\r\n\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\"distance_cost\": 0.8,\r\n\t\t\t\"tolls_average_cost\": 10.0,\r\n\t\t\t\"fuel_average_cost\": 20.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 12.5,\r\n\t\t\t\"percentage_rate_availability\": 0.4\r\n\t\t},\r\n\t\t\"walking\": {\r\n\t\t\t\"weight_cost\": 2.4,\r\n\t\t\t\"distance_cost\": 50.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 1.2,\r\n\t\t\t\"percentage_rate_availability\": 20.1\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Argentina\",\r\n\t\t\"bicycle\": {\r\n\t\t\t\"cost_weight_bicycle\": 10.0,\r\n\t\t\t\"cost_distance_bicycle\": 30.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 20.0,\r\n\t\t\t\"percentage_rate_availability\": 20.0\r\n\t\t},\r\n\t\t\"car\": {\r\n\t\t\t\"weight_cost\": 0.5,\r\n\t\t\t\"distance_cost\": 1.0,\r\n\t\t\t\"tolls_average_cost\": 0.7,\r\n\t\t\t\"fuel_average_cost\": 0.4,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.4,\r\n\t\t\t\"percentage_rate_availability\": 10.0\r\n\t\t},\r\n\t\t\"motorcycle\": {\r\n\t\t\t\"weight_cost\": 0.6,\r\n\t\t\t\"distance_cost\": 0.6,\r\n\t\t\t\"tolls_average_cost\": 0.6,\r\n\t\t\t\"fuel_average_cost\": 0.6,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.6,\r\n\t\t\t\"percentage_rate_availability\": 0.6\r\n\t\t},\r\n\t\t\"truck\": {\r\n\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\"distance_cost\": 0.8,\r\n\t\t\t\"tolls_average_cost\": 10.0,\r\n\t\t\t\"fuel_average_cost\": 20.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 12.5,\r\n\t\t\t\"percentage_rate_availability\": 0.4\r\n\t\t},\r\n\t\t\"walking\": {\r\n\t\t\t\"weight_cost\": 2.4,\r\n\t\t\t\"distance_cost\": 50.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 1.2,\r\n\t\t\t\"percentage_rate_availability\": 20.1\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Peru\",\r\n\t\t\"bicycle\": {\r\n\t\t\t\"cost_weight_bicycle\": 10.0,\r\n\t\t\t\"cost_distance_bicycle\": 30.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 20.0,\r\n\t\t\t\"percentage_rate_availability\": 20.0\r\n\t\t},\r\n\t\t\"car\": {\r\n\t\t\t\"weight_cost\": 0.5,\r\n\t\t\t\"distance_cost\": 1.0,\r\n\t\t\t\"tolls_average_cost\": 0.7,\r\n\t\t\t\"fuel_average_cost\": 0.4,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.4,\r\n\t\t\t\"percentage_rate_availability\": 10.0\r\n\t\t},\r\n\t\t\"motorcycle\": {\r\n\t\t\t\"weight_cost\": 0.6,\r\n\t\t\t\"distance_cost\": 0.6,\r\n\t\t\t\"tolls_average_cost\": 0.6,\r\n\t\t\t\"fuel_average_cost\": 0.6,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.6,\r\n\t\t\t\"percentage_rate_availability\": 0.6\r\n\t\t},\r\n\t\t\"truck\": {\r\n\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\"distance_cost\": 0.8,\r\n\t\t\t\"tolls_average_cost\": 10.0,\r\n\t\t\t\"fuel_average_cost\": 20.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 12.5,\r\n\t\t\t\"percentage_rate_availability\": 0.4\r\n\t\t},\r\n\t\t\"walking\": {\r\n\t\t\t\"weight_cost\": 2.4,\r\n\t\t\t\"distance_cost\": 50.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 1.2,\r\n\t\t\t\"percentage_rate_availability\": 20.1\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Venezuela\",\r\n\t\t\"bicycle\": {\r\n\t\t\t\"cost_weight_bicycle\": 10.0,\r\n\t\t\t\"cost_distance_bicycle\": 30.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 20.0,\r\n\t\t\t\"percentage_rate_availability\": 20.0\r\n\t\t},\r\n\t\t\"car\": {\r\n\t\t\t\"weight_cost\": 0.5,\r\n\t\t\t\"distance_cost\": 1.0,\r\n\t\t\t\"tolls_average_cost\": 0.7,\r\n\t\t\t\"fuel_average_cost\": 0.4,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.4,\r\n\t\t\t\"percentage_rate_availability\": 10.0\r\n\t\t},\r\n\t\t\"motorcycle\": {\r\n\t\t\t\"weight_cost\": 0.6,\r\n\t\t\t\"distance_cost\": 0.6,\r\n\t\t\t\"tolls_average_cost\": 0.6,\r\n\t\t\t\"fuel_average_cost\": 0.6,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.6,\r\n\t\t\t\"percentage_rate_availability\": 0.6\r\n\t\t},\r\n\t\t\"truck\": {\r\n\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\"distance_cost\": 0.8,\r\n\t\t\t\"tolls_average_cost\": 10.0,\r\n\t\t\t\"fuel_average_cost\": 20.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 12.5,\r\n\t\t\t\"percentage_rate_availability\": 0.4\r\n\t\t},\r\n\t\t\"walking\": {\r\n\t\t\t\"weight_cost\": 2.4,\r\n\t\t\t\"distance_cost\": 50.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 1.2,\r\n\t\t\t\"percentage_rate_availability\": 20.1\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Chile\",\r\n\t\t\"bicycle\": {\r\n\t\t\t\"cost_weight_bicycle\": 10.0,\r\n\t\t\t\"cost_distance_bicycle\": 30.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 20.0,\r\n\t\t\t\"percentage_rate_availability\": 20.0\r\n\t\t},\r\n\t\t\"car\": {\r\n\t\t\t\"weight_cost\": 0.5,\r\n\t\t\t\"distance_cost\": 1.0,\r\n\t\t\t\"tolls_average_cost\": 0.7,\r\n\t\t\t\"fuel_average_cost\": 0.4,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.4,\r\n\t\t\t\"percentage_rate_availability\": 10.0\r\n\t\t},\r\n\t\t\"motorcycle\": {\r\n\t\t\t\"weight_cost\": 0.6,\r\n\t\t\t\"distance_cost\": 0.6,\r\n\t\t\t\"tolls_average_cost\": 0.6,\r\n\t\t\t\"fuel_average_cost\": 0.6,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.6,\r\n\t\t\t\"percentage_rate_availability\": 0.6\r\n\t\t},\r\n\t\t\"truck\": {\r\n\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\"distance_cost\": 0.8,\r\n\t\t\t\"tolls_average_cost\": 10.0,\r\n\t\t\t\"fuel_average_cost\": 20.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 12.5,\r\n\t\t\t\"percentage_rate_availability\": 0.4\r\n\t\t},\r\n\t\t\"walking\": {\r\n\t\t\t\"weight_cost\": 2.4,\r\n\t\t\t\"distance_cost\": 50.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 1.2,\r\n\t\t\t\"percentage_rate_availability\": 20.1\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Ecuador\",\r\n\t\t\"bicycle\": {\r\n\t\t\t\"cost_weight_bicycle\": 10.0,\r\n\t\t\t\"cost_distance_bicycle\": 30.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 20.0,\r\n\t\t\t\"percentage_rate_availability\": 20.0\r\n\t\t},\r\n\t\t\"car\": {\r\n\t\t\t\"weight_cost\": 0.5,\r\n\t\t\t\"distance_cost\": 1.0,\r\n\t\t\t\"tolls_average_cost\": 0.7,\r\n\t\t\t\"fuel_average_cost\": 0.4,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.4,\r\n\t\t\t\"percentage_rate_availability\": 10.0\r\n\t\t},\r\n\t\t\"motorcycle\": {\r\n\t\t\t\"weight_cost\": 0.6,\r\n\t\t\t\"distance_cost\": 0.6,\r\n\t\t\t\"tolls_average_cost\": 0.6,\r\n\t\t\t\"fuel_average_cost\": 0.6,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.6,\r\n\t\t\t\"percentage_rate_availability\": 0.6\r\n\t\t},\r\n\t\t\"truck\": {\r\n\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\"distance_cost\": 0.8,\r\n\t\t\t\"tolls_average_cost\": 10.0,\r\n\t\t\t\"fuel_average_cost\": 20.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 12.5,\r\n\t\t\t\"percentage_rate_availability\": 0.4\r\n\t\t},\r\n\t\t\"walking\": {\r\n\t\t\t\"weight_cost\": 2.4,\r\n\t\t\t\"distance_cost\": 50.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 1.2,\r\n\t\t\t\"percentage_rate_availability\": 20.1\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Bolivia\",\r\n\t\t\"bicycle\": {\r\n\t\t\t\"cost_weight_bicycle\": 10.0,\r\n\t\t\t\"cost_distance_bicycle\": 30.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 20.0,\r\n\t\t\t\"percentage_rate_availability\": 20.0\r\n\t\t},\r\n\t\t\"car\": {\r\n\t\t\t\"weight_cost\": 0.5,\r\n\t\t\t\"distance_cost\": 1.0,\r\n\t\t\t\"tolls_average_cost\": 0.7,\r\n\t\t\t\"fuel_average_cost\": 0.4,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.4,\r\n\t\t\t\"percentage_rate_availability\": 10.0\r\n\t\t},\r\n\t\t\"motorcycle\": {\r\n\t\t\t\"weight_cost\": 0.6,\r\n\t\t\t\"distance_cost\": 0.6,\r\n\t\t\t\"tolls_average_cost\": 0.6,\r\n\t\t\t\"fuel_average_cost\": 0.6,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.6,\r\n\t\t\t\"percentage_rate_availability\": 0.6\r\n\t\t},\r\n\t\t\"truck\": {\r\n\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\"distance_cost\": 0.8,\r\n\t\t\t\"tolls_average_cost\": 10.0,\r\n\t\t\t\"fuel_average_cost\": 20.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 12.5,\r\n\t\t\t\"percentage_rate_availability\": 0.4\r\n\t\t},\r\n\t\t\"walking\": {\r\n\t\t\t\"weight_cost\": 2.4,\r\n\t\t\t\"distance_cost\": 50.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 1.2,\r\n\t\t\t\"percentage_rate_availability\": 20.1\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Paraguay\",\r\n\t\t\"bicycle\": {\r\n\t\t\t\"cost_weight_bicycle\": 10.0,\r\n\t\t\t\"cost_distance_bicycle\": 30.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 20.0,\r\n\t\t\t\"percentage_rate_availability\": 20.0\r\n\t\t},\r\n\t\t\"car\": {\r\n\t\t\t\"weight_cost\": 0.5,\r\n\t\t\t\"distance_cost\": 1.0,\r\n\t\t\t\"tolls_average_cost\": 0.7,\r\n\t\t\t\"fuel_average_cost\": 0.4,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.4,\r\n\t\t\t\"percentage_rate_availability\": 10.0\r\n\t\t},\r\n\t\t\"motorcycle\": {\r\n\t\t\t\"weight_cost\": 0.6,\r\n\t\t\t\"distance_cost\": 0.6,\r\n\t\t\t\"tolls_average_cost\": 0.6,\r\n\t\t\t\"fuel_average_cost\": 0.6,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.6,\r\n\t\t\t\"percentage_rate_availability\": 0.6\r\n\t\t},\r\n\t\t\"truck\": {\r\n\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\"distance_cost\": 0.8,\r\n\t\t\t\"tolls_average_cost\": 10.0,\r\n\t\t\t\"fuel_average_cost\": 20.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 12.5,\r\n\t\t\t\"percentage_rate_availability\": 0.4\r\n\t\t},\r\n\t\t\"walking\": {\r\n\t\t\t\"weight_cost\": 2.4,\r\n\t\t\t\"distance_cost\": 50.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 1.2,\r\n\t\t\t\"percentage_rate_availability\": 20.1\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Uruguay\",\r\n\t\t\"bicycle\": {\r\n\t\t\t\"cost_weight_bicycle\": 10.0,\r\n\t\t\t\"cost_distance_bicycle\": 30.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 20.0,\r\n\t\t\t\"percentage_rate_availability\": 20.0\r\n\t\t},\r\n\t\t\"car\": {\r\n\t\t\t\"weight_cost\": 0.5,\r\n\t\t\t\"distance_cost\": 1.0,\r\n\t\t\t\"tolls_average_cost\": 0.7,\r\n\t\t\t\"fuel_average_cost\": 0.4,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.4,\r\n\t\t\t\"percentage_rate_availability\": 10.0\r\n\t\t},\r\n\t\t\"motorcycle\": {\r\n\t\t\t\"weight_cost\": 0.6,\r\n\t\t\t\"distance_cost\": 0.6,\r\n\t\t\t\"tolls_average_cost\": 0.6,\r\n\t\t\t\"fuel_average_cost\": 0.6,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.6,\r\n\t\t\t\"percentage_rate_availability\": 0.6\r\n\t\t},\r\n\t\t\"truck\": {\r\n\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\"distance_cost\": 0.8,\r\n\t\t\t\"tolls_average_cost\": 10.0,\r\n\t\t\t\"fuel_average_cost\": 20.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 12.5,\r\n\t\t\t\"percentage_rate_availability\": 0.4\r\n\t\t},\r\n\t\t\"walking\": {\r\n\t\t\t\"weight_cost\": 2.4,\r\n\t\t\t\"distance_cost\": 50.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 1.2,\r\n\t\t\t\"percentage_rate_availability\": 20.1\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Guyana\",\r\n\t\t\"bicycle\": {\r\n\t\t\t\"cost_weight_bicycle\": 10.0,\r\n\t\t\t\"cost_distance_bicycle\": 30.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 20.0,\r\n\t\t\t\"percentage_rate_availability\": 20.0\r\n\t\t},\r\n\t\t\"car\": {\r\n\t\t\t\"weight_cost\": 0.5,\r\n\t\t\t\"distance_cost\": 1.0,\r\n\t\t\t\"tolls_average_cost\": 0.7,\r\n\t\t\t\"fuel_average_cost\": 0.4,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.4,\r\n\t\t\t\"percentage_rate_availability\": 10.0\r\n\t\t},\r\n\t\t\"motorcycle\": {\r\n\t\t\t\"weight_cost\": 0.6,\r\n\t\t\t\"distance_cost\": 0.6,\r\n\t\t\t\"tolls_average_cost\": 0.6,\r\n\t\t\t\"fuel_average_cost\": 0.6,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.6,\r\n\t\t\t\"percentage_rate_availability\": 0.6\r\n\t\t},\r\n\t\t\"truck\": {\r\n\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\"distance_cost\": 0.8,\r\n\t\t\t\"tolls_average_cost\": 10.0,\r\n\t\t\t\"fuel_average_cost\": 20.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 12.5,\r\n\t\t\t\"percentage_rate_availability\": 0.4\r\n\t\t},\r\n\t\t\"walking\": {\r\n\t\t\t\"weight_cost\": 2.4,\r\n\t\t\t\"distance_cost\": 50.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 1.2,\r\n\t\t\t\"percentage_rate_availability\": 20.1\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Suriname\",\r\n\t\t\"bicycle\": {\r\n\t\t\t\"cost_weight_bicycle\": 10.0,\r\n\t\t\t\"cost_distance_bicycle\": 30.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 20.0,\r\n\t\t\t\"percentage_rate_availability\": 20.0\r\n\t\t},\r\n\t\t\"car\": {\r\n\t\t\t\"weight_cost\": 0.5,\r\n\t\t\t\"distance_cost\": 1.0,\r\n\t\t\t\"tolls_average_cost\": 0.7,\r\n\t\t\t\"fuel_average_cost\": 0.4,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.4,\r\n\t\t\t\"percentage_rate_availability\": 10.0\r\n\t\t},\r\n\t\t\"motorcycle\": {\r\n\t\t\t\"weight_cost\": 0.6,\r\n\t\t\t\"distance_cost\": 0.6,\r\n\t\t\t\"tolls_average_cost\": 0.6,\r\n\t\t\t\"fuel_average_cost\": 0.6,\r\n\t\t\t\"percentage_reshipping_bicycle\": 0.6,\r\n\t\t\t\"percentage_rate_availability\": 0.6\r\n\t\t},\r\n\t\t\"truck\": {\r\n\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\"distance_cost\": 0.8,\r\n\t\t\t\"tolls_average_cost\": 10.0,\r\n\t\t\t\"fuel_average_cost\": 20.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 12.5,\r\n\t\t\t\"percentage_rate_availability\": 0.4\r\n\t\t},\r\n\t\t\"walking\": {\r\n\t\t\t\"weight_cost\": 2.4,\r\n\t\t\t\"distance_cost\": 50.0,\r\n\t\t\t\"percentage_reshipping_bicycle\": 1.2,\r\n\t\t\t\"percentage_rate_availability\": 20.1\r\n\t\t}\r\n\t}]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/roadway",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"roadway"
+									]
+								}
 							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id_rule\": \"0010101\",\n    \"date_creation\": 1581712756681,\n    \"date_change\": null,\n    \"status\": \"Active\",\n    \"roadway\": {\n        \"roadCar\": {\n            \"distance_max_car\": \"1\",\n            \"weight_max_car\": \"1\",\n            \"rate_availability_car\": \"1\"\n        },\n        \"roadBicycle\": {\n            \"distance_max_bicycle\": \"1\",\n            \"weight_max_bicycle\": \"1\",\n            \"rate_availability_bicycle\": \"1\"\n        },\n        \"roadMotorcycle\": {\n            \"distance_max_motorcycle\": \"1\",\n            \"weight_max_motorcycle\": \"1\",\n            \"rate_availability_motorcycle\": \"1\"\n        },\n        \"roadTrunk\": {\n            \"distance_max_truck\": \"1\",\n            \"weight_max_truck\": \"1\",\n            \"rate_availability_truck\": \"1\"\n        },\n        \"roadWalking\": {\n            \"distance_max_walking\": \"1\",\n            \"weight_max_walking\": \"1\",\n            \"rate_availability_walking\": \"1\"\n        }\n    },\n    \"maritimeway\": {\n        \"maritimeShipping\": {\n            \"distance_max_shipping\": \"1\",\n            \"weight_max_shipping\": \"1\",\n            \"rate_availability_shipping\": \"1\"\n        }\n    },\n    \"airway\": {\n        \"airplane\": {\n            \"weight_max_suitcase\": \"1\",\n            \"rate_availability_suitcase\": \"1\"\n        }\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							"response": []
 						},
-						"url": {
-							"raw": "http://192.241.133.13:9100/businessrule/sa",
-							"protocol": "http",
-							"host": [
-								"192",
-								"241",
-								"133",
-								"13"
-							],
-							"port": "9100",
-							"path": [
-								"businessrule",
-								"sa"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": ""
+						{
+							"name": "GET:RoadwayBRE",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/roadway/1",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"roadway",
+										"1"
+									]
 								}
-							]
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE:RoadwayBRE",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/roadway/1",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"roadway",
+										"1"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Execution",
+					"item": [
+						{
+							"name": "Add:ExecutionBRE",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"date_creation\": 1586370524446,\r\n\t\"date_change\": null,\r\n\t\"status\": \"Active\",\r\n\t\"unity_measurement_weight\": \"KG\",\r\n\t\"unity_measurement_distance\": \"KM\",\r\n\t\"currency_cost\": \"R$\",\r\n\t\"roadwayInstance\": {\r\n\t\t\"weight_max_roadway\": 300.0,\r\n\t\t\"allows_continents_roadway\": false\r\n\t},\r\n\t\"maritimewayInstance\": {\r\n\t\t\"distance_min_maritime\": 1250.42,\r\n\t\t\"weight_min_maritime\": 1.0,\r\n\t\t\"allows_continents_maritime\": true\r\n\t},\r\n\t\"airwayInstance\": {\r\n\t\t\"distance_min_airway\": 4250.42,\r\n\t\t\"weight_max_airway\": 3222.0,\r\n\t\t\"allows_continents_airway\": true\r\n\t}\r\n}"
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/execution",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"execution"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET:ExecutionBRE",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/execution/1",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"execution",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE:ExecutionBRE",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/execution/1",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"execution",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Airway",
+					"item": [
+						{
+							"name": "ADD:AirwayBRE",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"date_creation\": 1586370789335,\r\n\t\"date_change\": null,\r\n\t\"unity_measurement_weight\": \"KG\",\r\n\t\"unity_measurement_distance\": \"KM\",\r\n\t\"currency_cost\": \"R$\",\r\n\t\"status\": \"Active\",\r\n\t\"bagInstance\": {\r\n\t\t\"weight_max_bag\": 200.5,\r\n\t\t\"percentage_rate_availability_bag\": 0.5\r\n\t},\r\n\t\"containerAirlineInstance\": {\r\n\t\t\"weight_min_cointainer\": 200.5,\r\n\t\t\"weight_max_cointainer\": 500.5,\r\n\t\t\"percentage_rate_availability_cointainer\": 10.0\r\n\t},\r\n\t\"costsCountry\": [{\r\n\t\t\"nome_country\": \"Brazil\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Colombia\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Argentina\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Peru\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Venezuela\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Chile\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Ecuador\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Bolivia\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Paraguay\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Uruguay\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Guyana\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Suriname\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}]\r\n}"
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/airway",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"airway"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET:AirwayBRE",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/airway/1",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"airway",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE:Airway",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/airway/1",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"airway",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Maritimeway",
+					"item": [
+						{
+							"name": "Add:MaritimewayBRE",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"date_creation\": 1586201306947,\r\n\t\"date_change\": null,\r\n\t\"unity_measurement_weight\": \"KG\",\r\n\t\"unity_measurement_distance\": \"KM\",\r\n\t\"currency_cost\": \"R$\",\r\n\t\"status\": \"Active\",\r\n\t\"shipInstance\": {\r\n\t\t\"weight_max_ship\": 1.5,\r\n\t\t\"percentage_rate_availability_ship\": 20.5,\r\n\t\t\"allow_cross_continent_ship\": true\r\n\t},\r\n\t\"costsCountry\": [{\r\n\t\t\"name_country\": \"Brazil\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Colombia\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Argentina\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Peru\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Venezuela\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Chile\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Ecuador\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Bolivia\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Paraguay\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Uruguay\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Guyana\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Suriname\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}]\r\n}"
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/maritimeway",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"maritimeway"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET:MaritimewayBRE",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/maritimeway/1",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"maritimeway",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE:MaritimewayBRE",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9100/businessrule/sa/maritimeway/1",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9100",
+									"path": [
+										"businessrule",
+										"sa",
+										"maritimeway",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -1089,40 +1756,6 @@
 		{
 			"name": "Kafka.BRE",
 			"item": [
-				{
-					"name": "Add ExecutionBRE",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"id_rule\": \"0010101\",\n\t\"date_creation\": 1582980943223,\n\t\"date_change\": null,\n\t\"status\": \"Active\",\n\t\"roadwaybre\": {\n\t\t\"roadCar\": {\n\t\t\t\"distance_max_car\": 1,\n\t\t\t\"weight_max_car\": 1,\n\t\t\t\"rate_availability_car\": 1\n\t\t},\n\t\t\"roadBicycle\": {\n\t\t\t\"distance_max_bicycle\": 1,\n\t\t\t\"weight_max_bicycle\": 1,\n\t\t\t\"rate_availability_bicycle\": 1\n\t\t},\n\t\t\"roadMotorcycle\": {\n\t\t\t\"distance_max_motorcycle\": 1,\n\t\t\t\"weight_max_motorcycle\": 1,\n\t\t\t\"rate_availability_motorcycle\": 1\n\t\t},\n\t\t\"roadTrunk\": {\n\t\t\t\"distance_max_truck\": 1,\n\t\t\t\"weight_max_truck\": 1,\n\t\t\t\"rate_availability_truck\": 1\n\t\t},\n\t\t\"roadWalking\": {\n\t\t\t\"distance_max_walking\": 1,\n\t\t\t\"weight_max_walking\": 1,\n\t\t\t\"rate_availability_walking\": 1\n\t\t}\n\t},\n\t\"maritimewaybre\": {\n\t\t\"maritimeShipping\": {\n\t\t\t\"distance_max_shipping\": 1,\n\t\t\t\"weight_max_shipping\": 1,\n\t\t\t\"rate_availability_shipping\": 1\n\t\t}\n\t},\n\t\"airwaybre\": {\n\t\t\"airplane\": {\n\t\t\t\"weight_max_suitcase\": 1,\n\t\t\t\"rate_availability_suitcase\": 1\n\t\t}\n\t}\n}"
-						},
-						"url": {
-							"raw": "http://192.241.133.13:9100/businessrule/sa/executionbre",
-							"protocol": "http",
-							"host": [
-								"192",
-								"241",
-								"133",
-								"13"
-							],
-							"port": "9100",
-							"path": [
-								"businessrule",
-								"sa",
-								"executionbre"
-							]
-						}
-					},
-					"response": []
-				},
 				{
 					"name": "Add-RoadwayBRE",
 					"request": {
@@ -1355,5 +1988,6 @@
 			],
 			"protocolProfileBehavior": {}
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
