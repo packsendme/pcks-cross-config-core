@@ -27,13 +27,7 @@ security:
 
 api:
    google:
+      geocode: https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={key}
       tolls: https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}&key={key}
       distance: https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&key={key}
       key: AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA
-
-spring:
-   data:
-      mongodb.host: 167.172.152.184
-      mongodb.port: 27017
-      mongodb.uri: mongodb://167.172.152.184/dbpacksendme
-      mongo.repositories.enabled: true
