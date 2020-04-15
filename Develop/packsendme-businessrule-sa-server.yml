@@ -27,14 +27,11 @@ security:
 
 regis:
   cache:
-    executionBRE: topicExecutionBRE_SA
-    roadwayBRE_SA_Instance: topicRoadwayBRE_SA_Instance
-    roadwayBRE_SA_Costs: topicRoadwayBRE_SA_Costs
-    airwayBRE_SA_Instance: topicAirwayBRE_SA_Instance
-    airwayBRE_SA_Costs: topicAirwayBRE_SA_Costs
-    maritimewayBRE_SA_Instance: topicMaritimewayBRE_SA_Instance
-    maritimewayBRE_SA_Costs: topicMaritimewayBRE_SA_Costs
-    
+    roadwayBRE_SA: Roadway-SouthAmerica-BRE
+    airwayBRE_SA: Airway-SouthAmerica-BRE
+    maritimewayBRE_SA: Maritimeway-SouthAmerica-BRE
+    executeBRE_SA: Execute-SouthAmerica-BRE
+    tollsfuelBRE_SA: TollsFuel-SouthAmerica-BRE
     
 spring:
    redis:
