@@ -25,7 +25,7 @@ security:
             resource-ids: resources
             scope: read,write
 
-regis:
+redis:
   cache:
     tollsfuelBRE_SA: TollsFuel-SouthAmerica-BRE
     tollsfuelBRE_EURO: TollsFuel-Euro-BRE
