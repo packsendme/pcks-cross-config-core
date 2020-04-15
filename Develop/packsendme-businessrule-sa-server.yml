@@ -25,7 +25,7 @@ security:
             resource-ids: resources
             scope: read,write
 
-regis:
+redis:
   cache:
     roadwayBRE_SA: Roadway-SouthAmerica-BRE
     airwayBRE_SA: Airway-SouthAmerica-BRE
