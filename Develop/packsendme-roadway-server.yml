@@ -25,20 +25,14 @@ security:
             resource-ids: resources
             scope: read,write
 
-kafka:
-  topic:
-    roadwayBRE: topicRoadwayBRE_SA
-    
-api:
-   url: https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&key={my}
-   key: AIzaSyDt5pgW0boE_KhyVZHpNAh
-   
+regis:
+  cache:
+    roadwayBRE_SA: Roadway-SouthAmerica-BRE
+    roadwayBRE_EURO: Roadway-Europe-BRE
+    roadwayBRE_NA: Roadway-NorthAmerica-BRE
+        
 spring:
-   kafka:
-     consumer:
-        bootstrap-servers: 167.172.152.184:9092
-        group-id: group-id
-        auto-offset-reset: earliest
-        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-  
+   redis:
+      host: 167.172.152.184
+      port: 6379
+      password: packsendme_master_password  
