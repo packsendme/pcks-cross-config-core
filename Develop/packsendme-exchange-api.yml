@@ -1,5 +1,5 @@
 server:
-  port: 9098
+  port: 9200
 
 eureka:
   instance:
@@ -27,18 +27,16 @@ security:
 
 redis:
   cache:
-    roadwayBRE_SA: Roadway-SouthAmerica-BRE
-    roadwayBRE_EURO: Roadway-Europe-BRE
-    roadwayBRE_NA: Roadway-NorthAmerica-BRE
-    tollsfuelBRE_SA: TollsFuel-SouthAmerica-BRE
-    tollsfuelBRE_EURO: TollsFuel-Europe-BRE
-    tollsfuelBRE_NA: TollsFuel-NorthAmerica-BRE
-    financeCostDeliveryBRE_SA: FinanceCostDelivery-SouthAmerica-BRE
-    financeCostDeliveryBRE_EURO: FinanceCostDelivery-Europe-BRE
-    financeCostDeliveryBRE_NA: FinanceCostDelivery-NorthAmerica-BRE
-        
+    exchangeBRE_SA: Exchange-BRE
+
+api:
+   exchange:
+      currconvAPI:
+         url: https://free.currconv.com/api/v7/convert?q=USD_{current}&compact=ultra&apiKey={key}
+         key: 6f4db747a12d348d29c3
+      
 spring:
    redis:
       host: 167.172.152.184
       port: 6379
-      password: packsendme_master_password  
+      password: packsendme_master_password
