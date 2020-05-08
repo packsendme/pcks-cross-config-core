@@ -28,14 +28,8 @@ security:
 redis:
   cache:
     roadwayBRE_SA: Roadway-SouthAmerica-BRE
-    roadwayBRE_EURO: Roadway-Europe-BRE
-    roadwayBRE_NA: Roadway-NorthAmerica-BRE
     tollsfuelBRE_SA: TollsFuel-SouthAmerica-BRE
-    tollsfuelBRE_EURO: TollsFuel-Europe-BRE
-    tollsfuelBRE_NA: TollsFuel-NorthAmerica-BRE
     financeCostDeliveryBRE_SA: FinanceCostDelivery-SouthAmerica-BRE
-    financeCostDeliveryBRE_EURO: FinanceCostDelivery-Europe-BRE
-    financeCostDeliveryBRE_NA: FinanceCostDelivery-NorthAmerica-BRE
         
 spring:
    redis:
