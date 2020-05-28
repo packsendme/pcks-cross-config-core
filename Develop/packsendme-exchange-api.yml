@@ -32,8 +32,10 @@ redis:
 api:
    exchange:
       currconvAPI:
-         url: https://free.currconv.com/api/v7/convert?q=USD_{current}&compact=ultra&apiKey={key}
+         url-current: https://free.currconv.com/api/v7/convert?q=USD_{current}&compact=ultra&apiKey={key}
+         url-country: https://free.currconv.com/api/v7/countries?apiKey={key}
          key: 6f4db747a12d348d29c3
+      
       
 spring:
    redis:
