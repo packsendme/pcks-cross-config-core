@@ -33,6 +33,7 @@ redis:
     executeBRE_SA: Execute-SouthAmerica-BRE
     tollsfuelBRE_SA: TollsFuel-SouthAmerica-BRE
     financeCostDeliveryBRE_SA: FinanceCostDelivery-SouthAmerica-BRE
+    truckBRE_SA: TruckBRE-SouthAmerica-BRE
     
 spring:
    redis:
