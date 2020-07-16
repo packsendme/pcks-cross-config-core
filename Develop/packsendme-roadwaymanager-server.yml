@@ -1,5 +1,5 @@
 server:
-  port: 9098
+  port: 9008
 
 eureka:
   instance:
@@ -28,12 +28,14 @@ security:
 redis:
   cache:
     roadwayBRE_SA: Roadway-SouthAmerica-BRE
-    tollsfuelBRE_SA: TollsFuel-SouthAmerica-BRE
-    financeCostDeliveryBRE_SA: FinanceCostDelivery-SouthAmerica-BRE
-    truckBRE_SA: Truck-SouthAmerica-BRE
         
 spring:
    redis:
       host: 167.172.152.184
       port: 6379
       password: packsendme_master_password  
+   data:
+      mongodb.host: 167.172.152.184
+      mongodb.port: 27017
+      mongodb.uri: mongodb://167.172.152.184/dbpacksendme
+      mongo.repositories.enabled: true
