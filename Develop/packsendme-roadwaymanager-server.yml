@@ -30,10 +30,6 @@ redis:
     roadwayBRE_SA: Roadway-SouthAmerica-BRE
         
 spring:
-   redis:
-      host: 167.172.152.184
-      port: 6379
-      password: packsendme_master_password  
    data:
       mongodb.host: 167.172.152.184
       mongodb.port: 27017
