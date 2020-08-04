@@ -33,5 +33,5 @@ spring:
    data:
       mongodb.host: 167.172.152.184
       mongodb.port: 27017
-      mongodb.uri: mongodb://167.172.152.184/dbpacksendme
+      mongodb.uri: mongodb://167.172.152.184/dbPackSendManager
       mongo.repositories.enabled: true
