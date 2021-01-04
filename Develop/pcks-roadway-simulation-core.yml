@@ -24,23 +24,18 @@ security:
             client-secret: $2a$10$jJFbSMGC2xsOqIlYYLqRouBDGRsvnP.egfdw3MutRXzHdhNoNnBA6
             resource-ids: resources
             scope: read,write
-
+ 
+redis:
+  cache:
+    roadwayBRE_SA: Roadway-BRE-SA
+    
 spring:
    data:
       mongodb.host: 167.172.152.184
       mongodb.port: 27017
-      mongodb.uri: mongodb://167.172.152.184/dbpacksendme
+      mongodb.uri: mongodb://167.172.152.184/dbPackSendManager
       mongo.repositories.enabled: true
-      
-   kafka:
-     consumer:
-        bootstrap-servers: 167.172.152.184:9092
-        group-id: simulation-sa-topic
-        auto-offset-reset: earliest
-        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-     producer:
-        bootstrap-servers: 167.172.152.184:9092
-        key-serializer: org.apache.kafka.common.serialization.StringSerializer
-        value-serializer: org.apache.kafka.common.serialization.StringSerializer
-   
+   redis:
+      host: 167.172.152.184
+      port: 6379
+      password: packsendme_master_password
