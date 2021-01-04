@@ -28,6 +28,7 @@ security:
 redis:
   cache:
     roadwayBRE_SA: Roadway-BRE-SA
+    tollsfuel: TollsFuel-SA
     
 spring:
    data:
