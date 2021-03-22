@@ -35,3 +35,14 @@ api:
       tolls: https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}&key={key}
       distance: https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&key={key}
       key: AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA
+
+spring:
+   data:
+      mongodb.host: 167.172.152.184
+      mongodb.port: 27017
+      mongodb.uri: mongodb://167.172.152.184/dbPackSendManager
+      mongo.repositories.enabled: true
+   redis:
+      host: 167.172.152.184
+      port: 6379
+      password: packsendme_master_password
