@@ -20,15 +20,14 @@ security:
         client:
             access-token-validity-seconds: 1800
             authorized-grant-types: password,refresh_token
-            client-id: admin
-            client-secret: $2a$10$jJFbSMGC2xsOqIlYYLqRouBDGRsvnP.egfdw3MutRXzHdhNoNnBA6
+            client-id: admin  FbSMGC2xsOqIlYYLqRouBDGRsvnP.egfdw3MutRXzHdhNoNnBA6
             resource-ids: resources
             scope: read,write
 
 redis:
   cache:
-    roadwayBRE_SA: Roadway-BRE-SA
-    tollsfuel: TollsFuel-SA
+    roadwayBRE_SA: RoadwayRule
+    tollsfuel: TollsFuel
     
 spring:
    data:

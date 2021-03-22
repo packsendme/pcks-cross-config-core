@@ -27,9 +27,7 @@ security:
 
 redis:
   cache:
-    tollsfuelBRE_SA: TollsFuel-SouthAmerica-BRE
-    tollsfuelBRE_EURO: TollsFuel-Euro-BRE
-    tollsfuelBRE_NA: TollsFuel-NorthAmerica-BRE
+    tollsfuel: TollsFuel
     
 api:
    google:
