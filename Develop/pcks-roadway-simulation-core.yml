@@ -27,7 +27,7 @@ security:
  
 redis:
   cache:
-    roadwayBRE_SA: Roadway-BRE-SA
+    roadwayBRE_SA: RoadwayBRE
     
 spring:
    data:
