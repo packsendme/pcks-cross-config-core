@@ -27,7 +27,7 @@ security:
 
 redis:
   cache:
-    exchangeBRE_SA: Exchange-BRE
+    exchangeBRE_SA: Exchange
 
 api:
    exchange:
