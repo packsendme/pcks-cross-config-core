@@ -1989,7 +1989,7 @@
 								{
 									"name": "API-Tracking",
 									"request": {
-										"url": "http://192.241.133.13:9099/api/google/distance/R. Bartolomeu de Gusmão, 121 - Vila Mariana, São Paulo - SP, 04110-020, Brazil/ R. Fausto Ferraz, 100, São Paulo - SP, Brazil/KM",
+										"url": "http://192.241.133.13:9099/api/google/distance/Rua Capitao Jose Jacinto de Andrade, 785, Sao Joao da Boa Vista/ Rua Bartolomeu de Gusmao, 302, Sao Paulo/KM",
 										"method": "GET",
 										"header": [
 											{
@@ -2135,13 +2135,13 @@
 							"_postman_isSubFolder": true
 						},
 						{
-							"name": "Roadway",
+							"name": "Core",
 							"description": "",
 							"item": [
 								{
-									"name": "GET-Roadway",
+									"name": "GET-Simulation",
 									"request": {
-										"url": "http://192.241.133.13:9098/roadway/simulation",
+										"url": "http://192.241.133.13:9199/roadway/simulation",
 										"method": "POST",
 										"header": [
 											{
@@ -2181,7 +2181,114 @@
 												},
 												{
 													"key": "address_destination",
-													"value": "Rua Capitao Jose Jacinto de Andrade, 785. Sao Joao da Boa Vista",
+													"value": "Rua Capitao Jose Jacinto de Andrade, 785, Sao Joao da Boa Vista",
+													"description": "",
+													"type": "text"
+												},
+												{
+													"key": "type_transport",
+													"value": "Transporte Carga Unitário",
+													"description": "",
+													"type": "text"
+												},
+												{
+													"key": "product_transport",
+													"value": "Celular",
+													"description": "",
+													"type": "text"
+												},
+												{
+													"key": "people",
+													"value": "0",
+													"description": "",
+													"type": "text"
+												},
+												{
+													"key": "weight_max",
+													"value": "5.0",
+													"description": "",
+													"type": "text"
+												},
+												{
+													"key": "unity_weight",
+													"value": "Kilograma",
+													"description": "",
+													"type": "text"
+												},
+												{
+													"key": "height_max",
+													"value": "15.0",
+													"description": "",
+													"type": "text"
+												},
+												{
+													"key": "width_max",
+													"value": "5.0",
+													"description": "",
+													"type": "text"
+												},
+												{
+													"key": "length_max",
+													"value": "2.0",
+													"description": "",
+													"type": "text"
+												},
+												{
+													"key": "delivery_type",
+													"value": "normal",
+													"description": "",
+													"type": "text"
+												}
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "GET-Simulation",
+									"request": {
+										"url": "http://192.241.133.13:9199/roadway/simulation",
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"description": ""
+											},
+											{
+												"key": "isoLanguageCode",
+												"value": "pt",
+												"description": ""
+											},
+											{
+												"key": "isoCountryCode",
+												"value": "BR",
+												"description": ""
+											},
+											{
+												"key": "isoCurrencyCode",
+												"value": "BRL",
+												"description": ""
+											},
+											{
+												"key": "originApp",
+												"value": "APP-MICROSERVICE",
+												"description": ""
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "address_origin",
+													"value": "Rua Bartolomeu de Gusmao, 302, Sao Paulo",
+													"description": "",
+													"type": "text"
+												},
+												{
+													"key": "address_destination",
+													"value": "Rua Capitao Jose Jacinto de Andrade, 785, Sao Joao da Boa Vista",
 													"description": "",
 													"type": "text"
 												},
@@ -2469,7 +2576,7 @@
 							"name": "Roadway-DELETEAll",
 							"request": {
 								"url": {
-									"raw": "http://192.241.133.13:9018/roadbrewa/roadway/all?id=5fdd260352faff0001e023f9",
+									"raw": "http://192.241.133.13:9018/roadbrewa/roadway/all?id=606a2d6ad601800001f334f0",
 									"protocol": "http",
 									"host": [
 										"192",
@@ -2486,7 +2593,7 @@
 									"query": [
 										{
 											"key": "id",
-											"value": "5fdd260352faff0001e023f9",
+											"value": "606a2d6ad601800001f334f0",
 											"equals": true,
 											"description": ""
 										}
@@ -2813,6 +2920,128 @@
 									"mode": "raw",
 									"raw": "{\n                \"id\": \"5fdce9b552faff0001e023f3\",\n                \"name_bre\": \"BRE-CAT_S-Transporte Carga Seca\",\n                \"transport\": \"Transporte Carga Seca\",\n                \"blocked_id\": null,\n                \"date_creation\": \"2020-12-18T17:45:29.353Z\",\n                \"date_change\": null,\n                \"categories\": [\n                    {\n                        \"id\": null,\n                        \"name_category\": \"CAT_S\",\n                        \"transport\": \"Transporte Carga Seca\",\n                        \"weight_max\": 50,\n                        \"people_max\": 0,\n                        \"unity_weight\": {\n                            \"3\": \"Tonelada\"\n                        },\n                        \"vehicles\": [\n                            {\n                                \"id\": null,\n                                \"category_vehicle\": null,\n                                \"type_vehicle\": null,\n                                \"classification_vehicle\": null,\n                                \"subclassification_vehicle\": null,\n                                \"transport_type\": \"Cargo\",\n                                \"weight_max\": 40,\n                                \"unity_weight\": {\n                                    \"3\": \"Tonelada\"\n                                },\n                                \"axis_total\": 7,\n                                \"people_max\": 0,\n                                \"height_dimension_max\": null,\n                                \"width_dimension_max\": null,\n                                \"length_dimension_max\": null,\n                                \"fuel_consumption\": null,\n                                \"bodywork_vehicle\": \"\"\n                            },\n                            {\n                                \"id\": null,\n                                \"category_vehicle\": null,\n                                \"type_vehicle\": null,\n                                \"classification_vehicle\": null,\n                                \"subclassification_vehicle\": null,\n                                \"transport_type\": \"Cargo\",\n                                \"weight_max\": 50,\n                                \"unity_weight\": {\n                                    \"3\": \"Tonelada\"\n                                },\n                                \"axis_total\": 7,\n                                \"people_max\": 0,\n                                \"height_dimension_max\": null,\n                                \"width_dimension_max\": null,\n                                \"length_dimension_max\": null,\n                                \"fuel_consumption\": null,\n                                \"bodywork_vehicle\": \"\"\n                            }\n                        ],\n                        \"dt_inc\": \"2020-11-30T22:34:02.219+0000\",\n                        \"dt_update\": null\n                    }\n                ],\n                \"costs\": [\n                    {\n                        \"countryName\": \"Brazil (+55)\",\n                        \"vehicle\": \"Bi-truck\",\n                        \"weight_cost\": 2,\n                        \"distance_cost\": 3,\n                        \"worktime_cost\": 4,\n                        \"average_consumption_cost\": 5,\n                        \"currency_symbol\": \"R$\",\n                        \"currency\": \"REAL$\",\n                        \"statusChange\": true\n                    },\n                    {\n                        \"countryName\": \"Brazil (+55)\",\n                        \"vehicle\": \"Truck Pesado\",\n                        \"weight_cost\": 0,\n                        \"distance_cost\": 0,\n                        \"worktime_cost\": 0,\n                        \"average_consumption_cost\": 0,\n                        \"currency_symbol\": \"R$\",\n                        \"currency\": \"REAL$\",\n                        \"statusChange\": false\n                    }\n                ],\n                \"locations\": [\n                    {\n                        \"id\": null,\n                        \"codCountry\": \"+55\",\n                        \"countryName\": \"Brazil (+55)\",\n                        \"countryShortName\": null,\n                        \"identifier\": \"BR\",\n                        \"citySpecify\": false,\n                        \"cities\": []\n                    }\n                ],\n                \"version\": \"1.0.0.1.0\",\n                \"status\": \"PUBLISHED\"\n            }"
 								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Location",
+					"description": "",
+					"item": [
+						{
+							"name": "Location",
+							"request": {
+								"url": "http://192.241.133.13:9021/roadbrewa/location/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "isoLanguageCode",
+										"value": "pt",
+										"description": ""
+									},
+									{
+										"key": "isoCountryCode",
+										"value": "BR",
+										"description": ""
+									},
+									{
+										"key": "isoCurrencyCode",
+										"value": "BRL",
+										"description": ""
+									},
+									{
+										"key": "originApp",
+										"value": "APP-MICROSERVICE",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Transport",
+					"description": "",
+					"item": [
+						{
+							"name": "Transport",
+							"request": {
+								"url": {
+									"raw": "http://192.241.133.13:9018/roadbrewa/roadway/tollsfuel?country=Brazil",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9018",
+									"path": [
+										"roadbrewa",
+										"roadway",
+										"tollsfuel"
+									],
+									"query": [
+										{
+											"key": "country",
+											"value": "Brazil",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "isoLanguageCode",
+										"value": "pt",
+										"description": ""
+									},
+									{
+										"key": "isoCountryCode",
+										"value": "BR",
+										"description": ""
+									},
+									{
+										"key": "isoCurrencyCode",
+										"value": "BRL",
+										"description": ""
+									},
+									{
+										"key": "originApp",
+										"value": "APP-MICROSERVICE",
+										"description": ""
+									}
+								],
+								"body": {},
 								"description": ""
 							},
 							"response": []
