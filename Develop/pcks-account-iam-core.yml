@@ -27,7 +27,7 @@ security:
 
 spring:
    data:
-      mongodb.host: 167.172.152.184
+      mongodb.host: 192.241.133.13
       mongodb.port: 27017
-      mongodb.uri: mongodb://167.172.152.184/dbpacksendme
+      mongodb.uri: mongodb://root:MongoDB2019!@192.241.133.13/dbpacksendme
       mongo.repositories.enabled: true
