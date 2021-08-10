@@ -29,5 +29,5 @@ spring:
    data:
       mongodb.host: 192.241.133.13
       mongodb.port: 27017
-      mongodb.uri: mongodb://192.241.133.13/dbpacksendme
+      mongodb.uri: mongodb://root:MongoDB2019!@192.241.133.13:27017/?authSource=dbpacksendme
       mongo.repositories.enabled: true
