@@ -27,7 +27,9 @@ security:
 
 spring:
    data:
-      mongodb.host: 167.172.152.184
+      mongodb.host: 192.241.133.13
       mongodb.port: 27017
-      mongodb.uri: mongodb://167.172.152.184/dbpacksendme
+      mongodb.database: dbpacksendme
+      mongodb.uri: mongodb://root:MongoDB2019%21@192.241.133.13:27017/dbpacksendme?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false
+      #mongodb.uri: mongodb://root:MongoDB2019!@192.241.133.13:27017/?authSource=dbpacksendme
       mongo.repositories.enabled: true
