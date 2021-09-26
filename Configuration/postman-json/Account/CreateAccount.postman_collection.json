@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "8311be8c-9030-4448-9730-8207ade8517f",
+		"name": "CreateAccount",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1- ValidationUsername",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.241.133.13:9093/account/iam/identity/+5519993306262/2021-08-19T12:44:59.700",
+					"protocol": "http",
+					"host": [
+						"192",
+						"241",
+						"133",
+						"13"
+					],
+					"port": "9093",
+					"path": [
+						"account",
+						"iam",
+						"identity",
+						"+5519993306262",
+						"2021-08-19T12:44:59.700"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2- ValidationSMSCod",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.241.133.13:9097/3rpart/sms/+5519993306262/0500",
+					"protocol": "http",
+					"host": [
+						"192",
+						"241",
+						"133",
+						"13"
+					],
+					"port": "9097",
+					"path": [
+						"3rpart",
+						"sms",
+						"+5519993306262",
+						"0500"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3- CreationAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\" : \"+5519993306262\",\r\n  \"email\" : \"ricardomarzochi@mail.com\",\r\n  \"name\" : \"ricardo\",\r\n  \"password\" : \"Sjbvpc070782\",\r\n  \"lastName\" : \"marzochi\",\r\n  \"country\" : \"BR\",\r\n  \"dateOperation\" : \"2021-08-19T12:44:59.700\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.241.133.13:9094/account/customer/",
+					"protocol": "http",
+					"host": [
+						"192",
+						"241",
+						"133",
+						"13"
+					],
+					"port": "9094",
+					"path": [
+						"account",
+						"customer",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

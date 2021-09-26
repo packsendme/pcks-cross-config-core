@@ -1,24 +1,286 @@
 {
-	"variables": [],
 	"info": {
-		"name": "PackSendMe-V1",
-		"_postman_id": "bb257231-117c-1451-1434-7cab13168aa8",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"_postman_id": "ece350db-a4ee-4898-b8a7-dcbd1bd43ed6",
+		"name": "PackSendMe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Account",
-			"description": "",
 			"item": [
 				{
+					"name": "Country",
+					"item": [
+						{
+							"name": "FindAllCountry",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9096/country/BR",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9096",
+									"path": [
+										"country",
+										"BR"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FindCountryByCode",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9096/country/BR",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9096",
+									"path": [
+										"country",
+										"BR"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddCountry",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"codcountry\": \"+93\",\n    \"namecountry\": \"Afghanistan (+93)\",\n    \"nameimagecountry\": \"iconAfghanistan.png\",\n    \"formatnumbercountry\": \"070 123 4567\"\n}"
+								},
+								"url": {
+									"raw": "http://192.241.133.13:9096/country",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9096",
+									"path": [
+										"country"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "FirstAccess",
+					"item": [
+						{
+							"name": "Login",
+							"item": [
+								{
+									"name": "Login",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://192.241.133.13:9093/iam/access/+5536331620/ricardo1",
+											"protocol": "http",
+											"host": [
+												"192",
+												"241",
+												"133",
+												"13"
+											],
+											"port": "9093",
+											"path": [
+												"iam",
+												"access",
+												"+5536331620",
+												"ricardo1"
+											]
+										},
+										"description": "Check username (number) and password"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Manager",
+							"item": [
+								{
+									"name": "UpdatePassword",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\" : \"+5536331620\",\n  \"password\" : \"1234567890\",\n  \"dateOperation\" : \"2019-10-13T21:54:19.536\",\n  \"activated\" : \"true\",\n  \"resetPasswordKey\" : \"false\",\n  \"activationKey\" : \"23423\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://192.241.133.13:9093/iam/manager/",
+											"protocol": "http",
+											"host": [
+												"192",
+												"241",
+												"133",
+												"13"
+											],
+											"port": "9093",
+											"path": [
+												"iam",
+												"manager",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "FristAccessValidation",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9093/account/iam/identity/+5536331620/2019-09-26T17:27:59.700",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9093",
+									"path": [
+										"account",
+										"iam",
+										"identity",
+										"+5536331620",
+										"2019-09-26T17:27:59.700"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "IdentitySMSCode",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.241.133.13:9093/iam/identity/sms/+5555555/2255",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9093",
+									"path": [
+										"iam",
+										"identity",
+										"sms",
+										"+5555555",
+										"2255"
+									]
+								},
+								"description": "Validate SMS Code"
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
 					"name": "PaymentAccount",
-					"description": "",
 					"item": [
 						{
 							"name": "AddPaymentCardAccount",
 							"request": {
-								"url": "http://192.241.133.13:9094/account/payment/+55656656436",
 								"method": "POST",
 								"header": [
 									{
@@ -32,14 +294,28 @@
 									"mode": "raw",
 									"raw": "{\n    \"payName\" : \"Ricardo Della Marzochi\",\n    \"payCodenum\" : \"66666666\",\n    \"payEntity\" : \"MasterCard\",\n    \"payType\" : \"CARD_PAY\",\n    \"payExpiry\": \"2019-07-23\",\n    \"payStatus\" : \"Activo\",\n    \"payValue\" : \"1234\",\n    \"dateCreation\" : \"2019-07-23T18:23:07.182Z\"\n}"
 								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment/+55656656436",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment",
+										"+55656656436"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "AddPaymentVoucherAccount",
 							"request": {
-								"url": "http://192.241.133.13:9094/account/payment",
 								"method": "POST",
 								"header": [
 									{
@@ -53,14 +329,27 @@
 									"mode": "raw",
 									"raw": "{\n\t\"username\" : \"+55656656436\",\n    \"payName\" : \"Voucher MIllll\",\n    \"payCodenum\" : \"2423423423423\",\n    \"payEntity\" : \"TicketVoucher\",\n    \"payType\" : \"VOUCHER_PAY\",\n    \"payExpiry\": \"2019-07-23\",\n    \"payStatus\" : \"Activo\",\n    \"payValue\" : \"50,00\",\n    \"dateCreation\" : \"2019-07-23T18:23:07.182Z\"\n}"
 								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "AddPaymentPromotionAccount",
 							"request": {
-								"url": "http://192.241.133.13:9094/account/payment",
 								"method": "POST",
 								"header": [
 									{
@@ -74,14 +363,27 @@
 									"mode": "raw",
 									"raw": "{\n\t\"username\" : \"+55656656436\",\n    \"payName\" : \"Promotion Total-Free\",\n    \"payCodenum\" : \"111111111111\",\n    \"payEntity\" : \"TicketPromotion\",\n    \"payType\" : \"PROMOTION_PAY\",\n    \"payExpiry\": \"2019-07-30\",\n    \"payStatus\" : \"Activo\",\n    \"payValue\" : \"50,00\",\n    \"dateCreation\" : \"2019-07-23T18:23:07.182Z\"\n}\n"
 								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "loadPaymentAccount",
 							"request": {
-								"url": "http://192.241.133.13:9094/account/payment/+54666333555",
 								"method": "GET",
 								"header": [
 									{
@@ -90,18 +392,28 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment/+54666333555",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment",
+										"+54666333555"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "updatePaymentCardAccount",
 							"request": {
-								"url": "http://192.241.133.13:9094/account/payment/+5536331620/4766642595517330",
 								"method": "PUT",
 								"header": [
 									{
@@ -114,14 +426,29 @@
 									"mode": "raw",
 									"raw": "{\n  \"payCodenum\" : \"4766642595517330\",\n  \"payCountry\" : \"BR\",\n  \"payExpiry\" : \"0735\",\n  \"payName\" : \"\",\n  \"payType\" : \"CARD_PAY\",\n  \"payStatus\" : \"Validation-Card\",\n  \"payValue\" : \"777\",\n  \"payEntity\" : \"VisaCard\",\n  \"dateOperation\" : \"2019-09-19T18:49:57.169\"\n}"
 								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment/+5536331620/4766642595517330",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment",
+										"+5536331620",
+										"4766642595517330"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "DeletePaymentAccount",
 							"request": {
-								"url": "http://192.241.133.13:9094/account/payment",
 								"method": "DELETE",
 								"header": [
 									{
@@ -135,14 +462,27 @@
 									"mode": "raw",
 									"raw": "{\n\t\"username\" : \"+34656656436\",\n    \"payName\" : \"Ricardo Della Marzochi\",\n    \"payCodenum\" : \"1234567890\",\n    \"payGeneralType\" : \"MASTER\",\n    \"payType\" : \"CREDITCARD_PAY\",\n    \"payExpiry\": \"2019-07-23\",\n    \"payStatus\" : \"Activo\",\n    \"payValue\" : \"1234\",\n    \"dateCreation\" : \"2019-07-23T18:23:07.182Z\",\n     \"dateUpdate\" : \"2019-07-23T18:23:07.182Z\"\n}\n    \n \n"
 								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "findPaymentCardByNum",
 							"request": {
-								"url": "http://192.241.133.13:9094/account/payment/+5536331620/4473016479004885",
 								"method": "GET",
 								"header": [
 									{
@@ -151,18 +491,29 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/payment/+5536331620/4473016479004885",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"payment",
+										"+5536331620",
+										"4473016479004885"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "CheckCardPay",
 							"request": {
-								"url": "http://192.241.133.13:9095/payment/card/validate/5571526867757397/BR/MasterCard/333/0228",
 								"method": "GET",
 								"header": [
 									{
@@ -171,25 +522,38 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9095/payment/card/validate/5571526867757397/BR/MasterCard/333/0228",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9095",
+									"path": [
+										"payment",
+										"card",
+										"validate",
+										"5571526867757397",
+										"BR",
+										"MasterCard",
+										"333",
+										"0228"
+									]
+								}
 							},
 							"response": []
 						}
-					],
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "Load",
-					"description": "",
 					"item": [
 						{
 							"name": "LoadUserAccount",
 							"request": {
-								"url": "http://192.241.133.13:9094/account/+55363316266/load",
 								"method": "GET",
 								"header": [
 									{
@@ -198,23 +562,45 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/+55363316266/load",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"+55363316266",
+										"load"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "LoadPersonalNameAccount",
 							"request": {
-								"url": "http://192.241.133.13:9094/account/personalname/+5536331620",
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": ""
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/personalname/+5536331620",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"personalname",
+										"+5536331620"
+									]
 								},
 								"description": "Load all name the Account (FirstName / LastName)"
 							},
@@ -223,7 +609,6 @@
 						{
 							"name": "LoadAccountByField",
 							"request": {
-								"url": "http://192.241.133.13:9094/account/+55363316266/username",
 								"method": "GET",
 								"header": [
 									{
@@ -232,25 +617,33 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/+55363316266/username",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"+55363316266",
+										"username"
+									]
+								}
 							},
 							"response": []
 						}
-					],
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "Manager",
-					"description": "",
 					"item": [
 						{
 							"name": "UpdateValidateSMSAndUsername",
 							"request": {
-								"url": "http://192.241.133.13:9093/iam/manager/+5536331638/+5536331639/0545/2019-11-03T19:07:26.702",
 								"method": "PUT",
 								"header": [
 									{
@@ -259,25 +652,36 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9093/iam/manager/+5536331638/+5536331639/0545/2019-11-03T19:07:26.702",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9093",
+									"path": [
+										"iam",
+										"manager",
+										"+5536331638",
+										"+5536331639",
+										"0545",
+										"2019-11-03T19:07:26.702"
+									]
+								}
 							},
 							"response": []
 						}
-					],
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "SMS",
-					"description": "",
 					"item": [
 						{
 							"name": "GeneratorSMSCode",
 							"request": {
-								"url": "http://192.241.133.13:9097/sms/+5536331639",
 								"method": "GET",
 								"header": [
 									{
@@ -286,18 +690,27 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9097/sms/+5536331639",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9097",
+									"path": [
+										"sms",
+										"+5536331639"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "FindSMSCode",
 							"request": {
-								"url": "http://192.241.133.13:9097/sms/+5536331638/2662",
 								"method": "GET",
 								"header": [
 									{
@@ -306,18 +719,28 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9097/sms/+5536331638/2662",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9097",
+									"path": [
+										"sms",
+										"+5536331638",
+										"2662"
+									]
+								}
 							},
 							"response": []
 						},
 						{
 							"name": "deleteSMSCode",
 							"request": {
-								"url": "http://192.241.133.13:9097/sms/+5536331620/",
 								"method": "DELETE",
 								"header": [
 									{
@@ -326,25 +749,33 @@
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9097/sms/+5536331620/",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9097",
+									"path": [
+										"sms",
+										"+5536331620",
+										""
+									]
+								}
 							},
 							"response": []
 						}
-					],
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "Address",
-					"description": "",
 					"item": [
 						{
 							"name": "UpdateAddress",
 							"request": {
-								"url": "http://192.241.133.13:9094/account/address/+5536331620",
 								"method": "PUT",
 								"header": [
 									{
@@ -357,89 +788,58 @@
 									"mode": "raw",
 									"raw": "{\n  \"city\" : \" Lisboa\",\n  \"country\" : \" Portugal\",\n  \"type\" : \"addressHome\",\n  \"address\" : \"Rua Augusta\",\n  \"main\" : \"main\"\n}"
 								},
-								"description": ""
+								"url": {
+									"raw": "http://192.241.133.13:9094/account/address/+5536331620",
+									"protocol": "http",
+									"host": [
+										"192",
+										"241",
+										"133",
+										"13"
+									],
+									"port": "9094",
+									"path": [
+										"account",
+										"address",
+										"+5536331620"
+									]
+								}
 							},
 							"response": []
 						}
-					],
-					"_postman_isSubFolder": true
+					]
 				}
-			]
-		},
-		{
-			"name": "Country",
-			"description": "",
-			"item": [
+			],
+			"event": [
 				{
-					"name": "FindAllCountry",
-					"request": {
-						"url": "http://192.241.133.13:9095/country",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
-					},
-					"response": []
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				},
 				{
-					"name": "FindCountryByCode",
-					"request": {
-						"url": "http://192.241.133.13:9096/country/BR",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "AddCountry",
-					"request": {
-						"url": "http://192.241.133.13:9096/country",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"codcountry\": \"+93\",\n    \"namecountry\": \"Afghanistan (+93)\",\n    \"nameimagecountry\": \"iconAfghanistan.png\",\n    \"formatnumbercountry\": \"070 123 4567\"\n}"
-						},
-						"description": ""
-					},
-					"response": []
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
 		{
 			"name": "Payment",
-			"description": "",
 			"item": [
 				{
 					"name": "ValidateCard",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"url": "http://192.241.133.13:9095/payment/card/validate/6011511394177422/BR/DiscoverCard/000/0525",
 						"method": "GET",
 						"header": [
 							{
@@ -453,853 +853,309 @@
 							"mode": "raw",
 							"raw": "{\n  \"payCodenum\" : \"6534 5435 4534 5345\",\n  \"payValue\" : \"343\",\n  \"payExpiry\" : \"34 / 53\",\n  \"payEntity\" : \"DiscoverCard\",\n  \"payCountry\" : \"+55\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://192.241.133.13:9095/payment/card/validate/6011511394177422/BR/DiscoverCard/000/0525",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9095",
+							"path": [
+								"payment",
+								"card",
+								"validate",
+								"6011511394177422",
+								"BR",
+								"DiscoverCard",
+								"000",
+								"0525"
+							]
+						}
 					},
 					"response": []
 				}
 			]
 		},
 		{
-			"name": "IAM",
-			"description": "",
+			"name": "Simulation",
 			"item": [
 				{
-					"name": "Login",
-					"description": "",
+					"name": "Roadway-sa",
 					"item": [
 						{
-							"name": "Login",
+							"name": "Google-API-Place",
 							"request": {
-								"url": "http://192.241.133.13:9093/iam/access/+5536331620/ricardo1",
 								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": "Check username (number) and password"
+								"header": [],
+								"url": {
+									"raw": "https://maps.googleapis.com/maps/api/distancematrix/json?origins=Sao Paulo&destinations=Belo Horizonte&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA",
+									"protocol": "https",
+									"host": [
+										"maps",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"maps",
+										"api",
+										"distancematrix",
+										"json"
+									],
+									"query": [
+										{
+											"key": "origins",
+											"value": "Sao Paulo"
+										},
+										{
+											"key": "destinations",
+											"value": "Belo Horizonte"
+										},
+										{
+											"key": "key",
+											"value": "AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA"
+										}
+									]
+								}
 							},
 							"response": []
 						},
 						{
-							"name": "FristAccessValidation",
+							"name": "Roadway-sa",
 							"request": {
-								"url": "http://192.241.133.13:9093/iam/identity/+5536331620/2019-09-26T17:27:59.700",
 								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "IdentitySMSCode",
-							"request": {
-								"url": "http://192.241.133.13:9093/iam/identity/sms/+5555555/2255",
-								"method": "GET",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": "Validate SMS Code"
+								"header": [],
+								"url": {
+									"raw": "https://maps.googleapis.com/maps/api/directions/json?origin=Sao Paulo&destination=Belo Horizonte&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA",
+									"protocol": "https",
+									"host": [
+										"maps",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"maps",
+										"api",
+										"directions",
+										"json"
+									],
+									"query": [
+										{
+											"key": "origin",
+											"value": "Sao Paulo"
+										},
+										{
+											"key": "destination",
+											"value": "Belo Horizonte"
+										},
+										{
+											"key": "key",
+											"value": "AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA"
+										},
+										{
+											"key": "travelMode",
+											"value": "TravelMode",
+											"disabled": true
+										}
+									]
+								}
 							},
 							"response": []
 						}
-					],
-					"_postman_isSubFolder": true
+					]
 				},
 				{
-					"name": "Manager",
-					"description": "",
+					"name": "Roadway-euro",
 					"item": [
 						{
-							"name": "UpdatePassword",
+							"name": "Michelin-API-Place",
 							"request": {
-								"url": "http://192.241.133.13:9093/iam/manager/",
-								"method": "PUT",
+								"method": "GET",
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
 										"type": "text"
 									}
 								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"username\" : \"+5536331620\",\n  \"password\" : \"1234567890\",\n  \"dateOperation\" : \"2019-10-13T21:54:19.536\",\n  \"activated\" : \"true\",\n  \"resetPasswordKey\" : \"false\",\n  \"activationKey\" : \"23423\"\n}"
-								},
-								"description": ""
+								"url": {
+									"raw": "http://apir.viamichelin.com/apir/1/geocode4f.xml?country=bra&city=sao paulo&address=10 promenade des anglais&authkey=RESTGP20200102102035337800692548",
+									"protocol": "http",
+									"host": [
+										"apir",
+										"viamichelin",
+										"com"
+									],
+									"path": [
+										"apir",
+										"1",
+										"geocode4f.xml"
+									],
+									"query": [
+										{
+											"key": "country",
+											"value": "bra"
+										},
+										{
+											"key": "city",
+											"value": "sao paulo"
+										},
+										{
+											"key": "address",
+											"value": "10 promenade des anglais"
+										},
+										{
+											"key": "authkey",
+											"value": "RESTGP20200102102035337800692548"
+										}
+									]
+								}
 							},
 							"response": []
 						}
-					],
-					"_postman_isSubFolder": true
+					]
+				},
+				{
+					"name": "https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street&location=42.3675294,-71.186966&radius=10000&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street&location=42.3675294,-71.186966&radius=10000&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"place",
+								"textsearch",
+								"json"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "123+main+street"
+								},
+								{
+									"key": "location",
+									"value": "42.3675294,-71.186966"
+								},
+								{
+									"key": "radius",
+									"value": "10000"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "BusinessRule",
-			"description": "",
 			"item": [
 				{
-					"name": "Roadway",
-					"description": "",
-					"item": [
-						{
-							"name": "ADD:RoadwayBRE",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/roadway",
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"type": "text"
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"type": "text"
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"type": "text"
-									},
-									{
-										"key": "originApp",
-										"value": "APP-WEB",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"name_rule\": \"Roadway-SouthAmerica-BRE\",\r\n\t\"date_creation\": \"2020-05-30\",\r\n\t\"date_change\": null,\r\n\t\"rate_reshipping\": 100.0,\r\n\t\"status\": \"Active\",\r\n\t\"ruleInstance\": {\r\n\t\t\"Walking\": {\r\n\t\t\t\"rule_type_way\": \"Walking\",\r\n\t\t\t\"distance_max\": 5.0,\r\n\t\t\t\"weight_max\": 5.0,\r\n\t\t\t\"allow_cross_continent\": false,\r\n\t\t\t\"unity_measurement_weight\": \"kg\",\r\n\t\t\t\"unity_measurement_distance\": \"km\"\r\n\t\t},\r\n\t\t\"Motorcycle\": {\r\n\t\t\t\"rule_type_way\": \"Motorcycle\",\r\n\t\t\t\"distance_max\": 300.0,\r\n\t\t\t\"weight_max\": 10.0,\r\n\t\t\t\"allow_cross_continent\": false,\r\n\t\t\t\"unity_measurement_weight\": \"kg\",\r\n\t\t\t\"unity_measurement_distance\": \"km\"\r\n\t\t},\r\n\t\t\"Car\": {\r\n\t\t\t\"rule_type_way\": \"Bicycle\",\r\n\t\t\t\"distance_max\": 10.0,\r\n\t\t\t\"weight_max\": 7.0,\r\n\t\t\t\"allow_cross_continent\": false,\r\n\t\t\t\"unity_measurement_weight\": \"kg\",\r\n\t\t\t\"unity_measurement_distance\": \"km\"\r\n\t\t},\r\n\t\t\"Truck\": {\r\n\t\t\t\"rule_type_way\": \"Truck\",\r\n\t\t\t\"distance_max\": 9192.0,\r\n\t\t\t\"weight_max\": 14.0,\r\n\t\t\t\"allow_cross_continent\": false,\r\n\t\t\t\"unity_measurement_weight\": \"t\",\r\n\t\t\t\"unity_measurement_distance\": \"km\"\r\n\t\t},\r\n\t\t\"Bicycle\": {\r\n\t\t\t\"rule_type_way\": \"Bicycle\",\r\n\t\t\t\"distance_max\": 50.0,\r\n\t\t\t\"weight_max\": 10.0,\r\n\t\t\t\"allow_cross_continent\": false,\r\n\t\t\t\"unity_measurement_weight\": \"kg\",\r\n\t\t\t\"unity_measurement_distance\": \"km\"\r\n\t\t}\r\n\t},\r\n\t\"ruleCosts\": {\r\n\t\t\"Colombia\": {\r\n\t\t\t\"Walking\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Motorcycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Car\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Truck\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 8.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Bicycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Venezuela\": {\r\n\t\t\t\"Walking\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Motorcycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Car\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Truck\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 8.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Bicycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Ecuador\": {\r\n\t\t\t\"Walking\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Motorcycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Car\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Truck\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 8.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Bicycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Argentina\": {\r\n\t\t\t\"Walking\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Motorcycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Car\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Truck\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 8.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Bicycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Uruguay\": {\r\n\t\t\t\"Walking\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Motorcycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Car\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Truck\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 8.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Bicycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Brazil\": {\r\n\t\t\t\"Walking\": {\r\n\t\t\t\t\"weight_cost\": 5.0,\r\n\t\t\t\t\"distance_cost\": 3.5,\r\n\t\t\t\t\"worktime_cost\": 10.0,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Motorcycle\": {\r\n\t\t\t\t\"weight_cost\": 2.5,\r\n\t\t\t\t\"distance_cost\": 2.0,\r\n\t\t\t\t\"worktime_cost\": 2.0,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Car\": {\r\n\t\t\t\t\"weight_cost\": 2.5,\r\n\t\t\t\t\"distance_cost\": 5.0,\r\n\t\t\t\t\"worktime_cost\": 2.0,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Truck\": {\r\n\t\t\t\t\"weight_cost\": 3.0,\r\n\t\t\t\t\"distance_cost\": 5.0,\r\n\t\t\t\t\"worktime_cost\": 2.0,\r\n\t\t\t\t\"average_consumption_cost\": 8.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Bicycle\": {\r\n\t\t\t\t\"weight_cost\": 5.0,\r\n\t\t\t\t\"distance_cost\": 1.5,\r\n\t\t\t\t\"worktime_cost\": 4.5,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Guyana\": {\r\n\t\t\t\"Walking\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Motorcycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Car\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Truck\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 8.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Bicycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Suriname\": {\r\n\t\t\t\"Walking\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Motorcycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Car\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Truck\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 8.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Bicycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Chile\": {\r\n\t\t\t\"Walking\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Motorcycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Car\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Truck\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 8.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Bicycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Bolivia\": {\r\n\t\t\t\"Walking\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Motorcycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Car\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Truck\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 8.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Bicycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Paraguay\": {\r\n\t\t\t\"Walking\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Motorcycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Car\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Truck\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 8.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Bicycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Peru\": {\r\n\t\t\t\"Walking\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Motorcycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Car\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 10.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Truck\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 8.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t},\r\n\t\t\t\"Bicycle\": {\r\n\t\t\t\t\"weight_cost\": 0.2,\r\n\t\t\t\t\"distance_cost\": 0.3,\r\n\t\t\t\t\"worktime_cost\": 0.4,\r\n\t\t\t\t\"average_consumption_cost\": 0.0,\r\n\t\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\t\"current_exchange\": \"R$\"\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}"
-								},
-								"description": ""
+					"name": "BusinessRule-SA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
 							},
-							"response": []
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_rule\": \"0010101\",\n    \"date_creation\": 1581712756681,\n    \"date_change\": null,\n    \"status\": \"Active\",\n    \"roadway\": {\n        \"roadCar\": {\n            \"distance_max_car\": \"1\",\n            \"weight_max_car\": \"1\",\n            \"rate_availability_car\": \"1\"\n        },\n        \"roadBicycle\": {\n            \"distance_max_bicycle\": \"1\",\n            \"weight_max_bicycle\": \"1\",\n            \"rate_availability_bicycle\": \"1\"\n        },\n        \"roadMotorcycle\": {\n            \"distance_max_motorcycle\": \"1\",\n            \"weight_max_motorcycle\": \"1\",\n            \"rate_availability_motorcycle\": \"1\"\n        },\n        \"roadTrunk\": {\n            \"distance_max_truck\": \"1\",\n            \"weight_max_truck\": \"1\",\n            \"rate_availability_truck\": \"1\"\n        },\n        \"roadWalking\": {\n            \"distance_max_walking\": \"1\",\n            \"weight_max_walking\": \"1\",\n            \"rate_availability_walking\": \"1\"\n        }\n    },\n    \"maritimeway\": {\n        \"maritimeShipping\": {\n            \"distance_max_shipping\": \"1\",\n            \"weight_max_shipping\": \"1\",\n            \"rate_availability_shipping\": \"1\"\n        }\n    },\n    \"airway\": {\n        \"airplane\": {\n            \"weight_max_suitcase\": \"1\",\n            \"rate_availability_suitcase\": \"1\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"name": "GET:RoadwayBRE",
-							"request": {
-								"url": {
-									"raw": "http://192.241.133.13:9100/businessrule/sa/roadway?name_rule=Roadway-SouthAmerica-BRE",
-									"protocol": "http",
-									"host": [
-										"192",
-										"241",
-										"133",
-										"13"
-									],
-									"port": "9100",
-									"path": [
-										"businessrule",
-										"sa",
-										"roadway"
-									],
-									"query": [
-										{
-											"key": "name_rule",
-											"value": "Roadway-SouthAmerica-BRE"
-										}
-									],
-									"variable": []
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"type": "text"
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"type": "text"
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"type": "text"
-									},
-									{
-										"key": "originApp",
-										"value": "APP-MICROSERVICE",
-										"type": "text"
-									},
-									{
-										"key": "",
-										"value": "",
-										"type": "text",
-										"disabled": true
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "DELETE:RoadwayBRE",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/roadway/Roadway-SouthAmerica-BRE",
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
 						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Execution",
-					"description": "",
-					"item": [
-						{
-							"name": "Add:ExecutionBRE",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/execution",
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"name_rule\": \"Execution-SouthAmerica-BRE\",\r\n\t\"date_creation\": 1586446815279,\r\n\t\"date_change\": null,\r\n\t\"status\": \"Active\",\r\n\t\"unity_measurement_weight\": \"KG\",\r\n\t\"unity_measurement_distance\": \"KM\",\r\n\t\"currency_cost\": \"R$\",\r\n\t\"roadwayInstance\": {\r\n\t\t\"weight_max_roadway\": 300.0,\r\n\t\t\"allows_continents_roadway\": false\r\n\t},\r\n\t\"maritimewayInstance\": {\r\n\t\t\"distance_min_maritime\": 1250.42,\r\n\t\t\"weight_min_maritime\": 1.0,\r\n\t\t\"allows_continents_maritime\": true\r\n\t},\r\n\t\"airwayInstance\": {\r\n\t\t\"distance_min_airway\": 4250.42,\r\n\t\t\"weight_max_airway\": 3222.0,\r\n\t\t\"allows_continents_airway\": true\r\n\t}\r\n}"
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "GET:ExecutionBRE",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/execution/Execution-SouthAmerica-BRE",
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "DELETE:ExecutionBRE",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/execution/Execution-SouthAmerica-BRE",
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Airway",
-					"description": "",
-					"item": [
-						{
-							"name": "ADD:AirwayBRE",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/airway",
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"name_rule\": \"Airway-SouthAmerica-BRE\",\r\n\t\"date_creation\": 1586447049650,\r\n\t\"date_change\": null,\r\n\t\"unity_measurement_weight\": \"KG\",\r\n\t\"unity_measurement_distance\": \"KM\",\r\n\t\"currency_cost\": \"R$\",\r\n\t\"status\": \"Active\",\r\n\t\"bagInstance\": {\r\n\t\t\"weight_max_bag\": 200.5,\r\n\t\t\"percentage_rate_availability_bag\": 0.5\r\n\t},\r\n\t\"containerAirlineInstance\": {\r\n\t\t\"weight_min_cointainer\": 200.5,\r\n\t\t\"weight_max_cointainer\": 500.5,\r\n\t\t\"percentage_rate_availability_cointainer\": 10.0\r\n\t},\r\n\t\"costsCountry\": [{\r\n\t\t\"nome_country\": \"Brazil\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Colombia\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Argentina\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Peru\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Venezuela\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Chile\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Ecuador\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Bolivia\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Paraguay\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Uruguay\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Guyana\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"nome_country\": \"Suriname\",\r\n\t\t\"bagPersonalCosts\": {\r\n\t\t\t\"cost_weight_bag\": 25.0,\r\n\t\t\t\"cost_per_bag\": 25.0,\r\n\t\t\t\"cost_variable_bag\": 3.0\r\n\t\t},\r\n\t\t\"containerAirlineCosts\": {\r\n\t\t\t\"cost_weight_container\": 1.0,\r\n\t\t\t\"cost_per_container\": 20.0,\r\n\t\t\t\"cost_variable_container\": 30.0,\r\n\t\t\t\"percentage_storage_container\": 60.0\r\n\t\t}\r\n\t}]\r\n}"
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "GET:AirwayBRE",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/airway/Airway-SouthAmerica-BRE",
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "DELETE:Airway",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/airway/Airway-SouthAmerica-BRE",
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Maritimeway",
-					"description": "",
-					"item": [
-						{
-							"name": "Add:MaritimewayBRE",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/maritimeway",
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"name_rule\": \"Maritimeway-SouthAmerica-BRE\",\r\n\t\"date_creation\": 1586447537578,\r\n\t\"date_change\": null,\r\n\t\"unity_measurement_weight\": \"KG\",\r\n\t\"unity_measurement_distance\": \"KM\",\r\n\t\"currency_cost\": \"R$\",\r\n\t\"status\": \"Active\",\r\n\t\"shipInstance\": {\r\n\t\t\"weight_max_ship\": 1.5,\r\n\t\t\"percentage_rate_availability_ship\": 20.5,\r\n\t\t\"allow_cross_continent_ship\": true\r\n\t},\r\n\t\"costsCountry\": [{\r\n\t\t\"name_country\": \"Brazil\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Colombia\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Argentina\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Peru\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Venezuela\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Chile\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Ecuador\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Bolivia\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Paraguay\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Uruguay\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Guyana\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}, {\r\n\t\t\"name_country\": \"Suriname\",\r\n\t\t\"shipCosts\": {\r\n\t\t\t\"cost_distance_ship\": 20.5,\r\n\t\t\t\"cost_weight_ship\": 1.0,\r\n\t\t\t\"cost_variable_ship\": 10.0,\r\n\t\t\t\"cost_rentcontainer_ship\": 80.0,\r\n\t\t\t\"percentage_storage_ship\": 4.0,\r\n\t\t\t\"percentage_rate_availability\": 1.0\r\n\t\t}\r\n\t}]\r\n}"
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "GET:MaritimewayBRE",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/maritimeway/Maritimeway-SouthAmerica-BRE",
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "DELETE:MaritimewayBRE",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/maritimeway/Maritimeway-SouthAmerica-BRE",
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "TollsFuel-Price",
-					"description": "",
-					"item": [
-						{
-							"name": "ADD:TollsFuelCountryBRE",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/tollsfuel",
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"type": "text"
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"type": "text"
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"type": "text"
-									},
-									{
-										"key": "originApp",
-										"value": "APP-WEB",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"name_rule\": \"TollsFuel-SouthAmerica-BRE\",\r\n\t\"tollsfuelPriceCountry\": {\r\n\t\t\"Colombia\": {\r\n\t\t\t\"tolls_price\": 1.5,\r\n\t\t\t\"fuelGasoline_price\": 4.5,\r\n\t\t\t\"fuelDiesel_price\": 4.5,\r\n\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\"current_exchange\": \"R$\"\r\n\t\t},\r\n\t\t\"Venezuela\": {\r\n\t\t\t\"tolls_price\": 23.5,\r\n\t\t\t\"fuelGasoline_price\": 19.5,\r\n\t\t\t\"fuelDiesel_price\": 19.5,\r\n\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\"current_exchange\": \"R$\"\r\n\t\t},\r\n\t\t\"Ecuador\": {\r\n\t\t\t\"tolls_price\": 38.5,\r\n\t\t\t\"fuelGasoline_price\": 34.5,\r\n\t\t\t\"fuelDiesel_price\": 34.5,\r\n\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\"current_exchange\": \"R$\"\r\n\t\t},\r\n\t\t\"Argentina\": {\r\n\t\t\t\"tolls_price\": 12.5,\r\n\t\t\t\"fuelGasoline_price\": 8.5,\r\n\t\t\t\"fuelDiesel_price\": 8.5,\r\n\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\"current_exchange\": \"R$\"\r\n\t\t},\r\n\t\t\"Uruguay\": {\r\n\t\t\t\"tolls_price\": 12.5,\r\n\t\t\t\"fuelGasoline_price\": 3.5,\r\n\t\t\t\"fuelDiesel_price\": 3.0,\r\n\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\"current_exchange\": \"R$\"\r\n\t\t},\r\n\t\t\"Brazil\": {\r\n\t\t\t\"tolls_price\": 12.5,\r\n\t\t\t\"fuelGasoline_price\":  3.5,\r\n\t\t\t\"fuelDiesel_price\": 3.0,\r\n\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\"current_exchange\": \"R$\"\r\n\t\t},\r\n\t\t\"Guyana\": {\r\n\t\t\t\"tolls_price\": 80.5,\r\n\t\t\t\"fuelGasoline_price\": 76.5,\r\n\t\t\t\"fuelDiesel_price\": 76.5,\r\n\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\"current_exchange\": \"R$\"\r\n\t\t},\r\n\t\t\"Suriname\": {\r\n\t\t\t\"tolls_price\": 93.5,\r\n\t\t\t\"fuelGasoline_price\": 89.5,\r\n\t\t\t\"fuelDiesel_price\": 89.5,\r\n\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\"current_exchange\": \"R$\"\r\n\t\t},\r\n\t\t\"Chile\": {\r\n\t\t\t\"tolls_price\": 30.5,\r\n\t\t\t\"fuelGasoline_price\": 26.5,\r\n\t\t\t\"fuelDiesel_price\": 26.5,\r\n\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\"current_exchange\": \"R$\"\r\n\t\t},\r\n\t\t\"Bolivia\": {\r\n\t\t\t\"tolls_price\": 47.5,\r\n\t\t\t\"fuelGasoline_price\": 43.5,\r\n\t\t\t\"fuelDiesel_price\": 43.5,\r\n\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\"current_exchange\": \"R$\"\r\n\t\t},\r\n\t\t\"Paraguay\": {\r\n\t\t\t\"tolls_price\": 57.5,\r\n\t\t\t\"fuelGasoline_price\": 53.5,\r\n\t\t\t\"fuelDiesel_price\": 53.5,\r\n\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\"current_exchange\": \"R$\"\r\n\t\t},\r\n\t\t\"Peru\": {\r\n\t\t\t\"tolls_price\": 17.5,\r\n\t\t\t\"fuelGasoline_price\": 13.5,\r\n\t\t\t\"fuelDiesel_price\": 13.5,\r\n\t\t\t\"rate_exchange\": 4.5,\r\n\t\t\t\"current_exchange\": \"R$\"\r\n\t\t}\r\n\t}\r\n}"
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "GET:TollsFuelBRE",
-							"request": {
-								"url": {
-									"raw": "http://192.241.133.13:9100/businessrule/sa/tollsfuel?name_rule=TollsFuel-SouthAmerica-BRE",
-									"protocol": "http",
-									"host": [
-										"192",
-										"241",
-										"133",
-										"13"
-									],
-									"port": "9100",
-									"path": [
-										"businessrule",
-										"sa",
-										"tollsfuel"
-									],
-									"query": [
-										{
-											"key": "name_rule",
-											"value": "TollsFuel-SouthAmerica-BRE"
-										}
-									],
-									"variable": []
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"type": "text"
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"type": "text"
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"type": "text"
-									},
-									{
-										"key": "originApp",
-										"value": "APP-WEB",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "DELETE:TollsFuelBRE",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/tollsfuel/TollsFuel-SouthAmerica-BRE",
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "FinanceCostDelivery",
-					"description": "",
-					"item": [
-						{
-							"name": "GET-FinanceCostDelivery",
-							"request": {
-								"url": {
-									"raw": "http://192.241.133.13:9100/businessrule/sa/financecostdelivery/?name_rule=FinanceCostDelivery-SouthAmerica-BRE",
-									"protocol": "http",
-									"host": [
-										"192",
-										"241",
-										"133",
-										"13"
-									],
-									"port": "9100",
-									"path": [
-										"businessrule",
-										"sa",
-										"financecostdelivery",
-										""
-									],
-									"query": [
-										{
-											"key": "name_rule",
-											"value": "FinanceCostDelivery-SouthAmerica-BRE"
-										}
-									],
-									"variable": []
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"type": "text"
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"type": "text"
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"type": "text"
-									},
-									{
-										"key": "originApp",
-										"value": "APP-MICROSERVICE",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "ADD-FinanceCostDelivery",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/financecostdelivery",
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\"type\":\"South-America\",\"percentage_packsend\":10.0,\"dt_inc\":null,\"status\":true}"
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "DELETE:FinanceCostDelivery",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/financecostdelivery/South-America",
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Truck",
-					"description": "",
-					"item": [
-						{
-							"name": "GET-Truck",
-							"request": {
-								"url": {
-									"raw": "http://192.241.133.13:9100/businessrule/sa/truck?name_rule=Truck-SouthAmerica-BRE",
-									"protocol": "http",
-									"host": [
-										"192",
-										"241",
-										"133",
-										"13"
-									],
-									"port": "9100",
-									"path": [
-										"businessrule",
-										"sa",
-										"truck"
-									],
-									"query": [
-										{
-											"key": "name_rule",
-											"value": "Truck-SouthAmerica-BRE"
-										}
-									],
-									"variable": []
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "isoLanguageCode",
-										"type": "text",
-										"value": "pt"
-									},
-									{
-										"key": "isoCountryCode",
-										"type": "text",
-										"value": "BR"
-									},
-									{
-										"key": "isoCurrencyCode",
-										"type": "text",
-										"value": "BRL"
-									},
-									{
-										"key": "originApp",
-										"type": "text",
-										"value": "APP-MICROSERVICE"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "ADD:Truck",
-							"request": {
-								"url": "http://192.241.133.13:9100/businessrule/sa/truck",
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "isoLanguageCode",
-										"type": "text",
-										"value": "pt"
-									},
-									{
-										"key": "isoCountryCode",
-										"type": "text",
-										"value": "BR"
-									},
-									{
-										"key": "isoCurrencyCode",
-										"type": "text",
-										"value": "BRL"
-									},
-									{
-										"key": "originApp",
-										"type": "text",
-										"value": "APP-WEB"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"name_rule\": \"Truck-SouthAmerica-BRE\",\r\n\t\"date_creation\": null,\r\n\t\"typeCharge\": {\r\n\t\t\"PerigosaConteineirizada\": {\r\n\t\t\t\"coeffDeslogging\": {\r\n\t\t\t\t\"unity\": \"R$/km\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 3.5334,\r\n\t\t\t\t\t\"6\": 4.0175,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 4.9729\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"coeffLoadUnload\": {\r\n\t\t\t\t\"unity\": \"R$\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 338.12,\r\n\t\t\t\t\t\"6\": 377.98,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 456.9\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"GranelSolido\": {\r\n\t\t\t\"coeffDeslogging\": {\r\n\t\t\t\t\"unity\": \"R$/km\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 3.5334,\r\n\t\t\t\t\t\"6\": 4.0175,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 4.9729\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"coeffLoadUnload\": {\r\n\t\t\t\t\"unity\": \"R$\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 338.12,\r\n\t\t\t\t\t\"6\": 377.98,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 456.9\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"PerigosaFrigorificada\": {\r\n\t\t\t\"coeffDeslogging\": {\r\n\t\t\t\t\"unity\": \"R$/km\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 3.5334,\r\n\t\t\t\t\t\"6\": 4.0175,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 4.9729\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"coeffLoadUnload\": {\r\n\t\t\t\t\"unity\": \"R$\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 338.12,\r\n\t\t\t\t\t\"6\": 377.98,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 456.9\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Frigorificada\": {\r\n\t\t\t\"coeffDeslogging\": {\r\n\t\t\t\t\"unity\": \"R$/km\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 3.5334,\r\n\t\t\t\t\t\"6\": 4.0175,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 4.9729\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"coeffLoadUnload\": {\r\n\t\t\t\t\"unity\": \"R$\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 338.12,\r\n\t\t\t\t\t\"6\": 377.98,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 456.9\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Conteineirizada\": {\r\n\t\t\t\"coeffDeslogging\": {\r\n\t\t\t\t\"unity\": \"R$/km\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 3.5334,\r\n\t\t\t\t\t\"6\": 4.0175,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 4.9729\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"coeffLoadUnload\": {\r\n\t\t\t\t\"unity\": \"R$\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 338.12,\r\n\t\t\t\t\t\"6\": 377.98,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 456.9\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"GranelPressurizada\": {\r\n\t\t\t\"coeffDeslogging\": {\r\n\t\t\t\t\"unity\": \"R$/km\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 3.5334,\r\n\t\t\t\t\t\"6\": 4.0175,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 4.9729\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"coeffLoadUnload\": {\r\n\t\t\t\t\"unity\": \"R$\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 338.12,\r\n\t\t\t\t\t\"6\": 377.98,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 456.9\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"PerigosaGranelLiquido\": {\r\n\t\t\t\"coeffDeslogging\": {\r\n\t\t\t\t\"unity\": \"R$/km\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 3.5334,\r\n\t\t\t\t\t\"6\": 4.0175,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 4.9729\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"coeffLoadUnload\": {\r\n\t\t\t\t\"unity\": \"R$\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 338.12,\r\n\t\t\t\t\t\"6\": 377.98,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 456.9\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"PerigosaGeral\": {\r\n\t\t\t\"coeffDeslogging\": {\r\n\t\t\t\t\"unity\": \"R$/km\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 3.5334,\r\n\t\t\t\t\t\"6\": 4.0175,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 4.9729\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"coeffLoadUnload\": {\r\n\t\t\t\t\"unity\": \"R$\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 338.12,\r\n\t\t\t\t\t\"6\": 377.98,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 456.9\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"GranelLiquido\": {\r\n\t\t\t\"coeffDeslogging\": {\r\n\t\t\t\t\"unity\": \"R$/km\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 3.5334,\r\n\t\t\t\t\t\"6\": 4.0175,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 4.9729\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"coeffLoadUnload\": {\r\n\t\t\t\t\"unity\": \"R$\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 338.12,\r\n\t\t\t\t\t\"6\": 377.98,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 456.9\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Neogranel\": {\r\n\t\t\t\"coeffDeslogging\": {\r\n\t\t\t\t\"unity\": \"R$/km\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 3.5334,\r\n\t\t\t\t\t\"6\": 4.0175,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 4.9729\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"coeffLoadUnload\": {\r\n\t\t\t\t\"unity\": \"R$\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 338.12,\r\n\t\t\t\t\t\"6\": 377.98,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 456.9\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"PerigosaGranelSolido\": {\r\n\t\t\t\"coeffDeslogging\": {\r\n\t\t\t\t\"unity\": \"R$/km\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 3.5334,\r\n\t\t\t\t\t\"6\": 4.0175,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 4.9729\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"coeffLoadUnload\": {\r\n\t\t\t\t\"unity\": \"R$\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 338.12,\r\n\t\t\t\t\t\"6\": 377.98,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 456.9\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"CargaGeral\": {\r\n\t\t\t\"coeffDeslogging\": {\r\n\t\t\t\t\"unity\": \"R$/km\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 3.5334,\r\n\t\t\t\t\t\"6\": 4.0175,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 4.9729\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"coeffLoadUnload\": {\r\n\t\t\t\t\"unity\": \"R$\",\r\n\t\t\t\t\"truckAxles\": {\r\n\t\t\t\t\t\"2\": 0.0,\r\n\t\t\t\t\t\"3\": 0.0,\r\n\t\t\t\t\t\"4\": 0.0,\r\n\t\t\t\t\t\"5\": 338.12,\r\n\t\t\t\t\t\"6\": 377.98,\r\n\t\t\t\t\t\"7\": 0.0,\r\n\t\t\t\t\t\"9\": 456.9\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}"
-								},
-								"description": ""
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "Kafka.BRE",
-			"description": "",
 			"item": [
+				{
+					"name": "Add ExecutionBRE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id_rule\": \"0010101\",\n\t\"date_creation\": 1582980943223,\n\t\"date_change\": null,\n\t\"status\": \"Active\",\n\t\"roadwaybre\": {\n\t\t\"roadCar\": {\n\t\t\t\"distance_max_car\": 1,\n\t\t\t\"weight_max_car\": 1,\n\t\t\t\"rate_availability_car\": 1\n\t\t},\n\t\t\"roadBicycle\": {\n\t\t\t\"distance_max_bicycle\": 1,\n\t\t\t\"weight_max_bicycle\": 1,\n\t\t\t\"rate_availability_bicycle\": 1\n\t\t},\n\t\t\"roadMotorcycle\": {\n\t\t\t\"distance_max_motorcycle\": 1,\n\t\t\t\"weight_max_motorcycle\": 1,\n\t\t\t\"rate_availability_motorcycle\": 1\n\t\t},\n\t\t\"roadTrunk\": {\n\t\t\t\"distance_max_truck\": 1,\n\t\t\t\"weight_max_truck\": 1,\n\t\t\t\"rate_availability_truck\": 1\n\t\t},\n\t\t\"roadWalking\": {\n\t\t\t\"distance_max_walking\": 1,\n\t\t\t\"weight_max_walking\": 1,\n\t\t\t\"rate_availability_walking\": 1\n\t\t}\n\t},\n\t\"maritimewaybre\": {\n\t\t\"maritimeShipping\": {\n\t\t\t\"distance_max_shipping\": 1,\n\t\t\t\"weight_max_shipping\": 1,\n\t\t\t\"rate_availability_shipping\": 1\n\t\t}\n\t},\n\t\"airwaybre\": {\n\t\t\"airplane\": {\n\t\t\t\"weight_max_suitcase\": 1,\n\t\t\t\"rate_availability_suitcase\": 1\n\t\t}\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/executionbre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"executionbre"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "Add-RoadwayBRE",
 					"request": {
-						"url": "http://192.241.133.13:9100/businessrule/sa/roadwaybre",
 						"method": "POST",
 						"header": [
 							{
@@ -1312,14 +1168,28 @@
 							"mode": "raw",
 							"raw": "{\n\t\"id_rule\": \"0010101\",\n\t\"date_creation\": 1582888973317,\n\t\"date_change\": null,\n\t\"status\": \"Active\",\n\t\"bicycleCosts\": {\n\t\t\"cost_distance_bicycle\": 1.0,\n\t\t\"cost_variable_bicycle\": 0.5,\n\t\t\"percentage_reshipping_bicycle\": 30.0,\n\t\t\"percentage_storage_bicycle\": 10.0\n\t},\n\t\"carCosts\": {\n\t\t\"cost_distance_car\": 1.5,\n\t\t\"cost_variable_car\": 2.5,\n\t\t\"percentage_reshipping_car\": 2.0,\n\t\t\"percentage_storage_car\": 3.2,\n\t\t\"percentage_cubage_car\": 4.1\n\t},\n\t\"motorcycleCosts\": {\n\t\t\"cost_distance_motorcycle\": 4.0,\n\t\t\"cost_variable_motorcycle\": 2.3,\n\t\t\"percentage_reshipping_motorcycle\": 0.5,\n\t\t\"percentage_storage_motorcycle\": 1.0\n\t},\n\t\"truckCosts\": {\n\t\t\"cost_distance_truck\": 1.0,\n\t\t\"cost_variable_truck\": 0.6,\n\t\t\"percentage_reshipping_truck\": 2.0,\n\t\t\"percentage_storage_truck\": 1.5,\n\t\t\"percentage_cubage_truck\": 5.0\n\t},\n\t\"walkingCosts\": {\n\t\t\"cost_distance_walking\": 1.0,\n\t\t\"cost_variable_walking\": 1.0,\n\t\t\"percentage_reshipping_walking\": 1.5,\n\t\t\"percentage_storage_walking\": 1.5\n\t}\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/roadwaybre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"roadwaybre"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Add-AirwayBRE",
 					"request": {
-						"url": "http://192.241.133.13:9100/businessrule/sa/airwaybre",
 						"method": "POST",
 						"header": [
 							{
@@ -1332,14 +1202,28 @@
 							"mode": "raw",
 							"raw": "{\n\t\"id_rule\": \"0010101\",\n\t\"date_creation\": 1582926503205,\n\t\"date_change\": null,\n\t\"status\": \"Active\",\n\t\"airplaneCosts\": {\n\t\t\"cost_suitcase_airplane\": 1.0,\n\t\t\"cost_variable_airplane\": 0.5,\n\t\t\"percentage_storage_airplane\": 30.0\n\t}\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/airwaybre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"airwaybre"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Add-MaritimewayBRE",
 					"request": {
-						"url": "http://192.241.133.13:9100/businessrule/sa/maritimebre",
 						"method": "POST",
 						"header": [
 							{
@@ -1352,14 +1236,28 @@
 							"mode": "raw",
 							"raw": "{\n\t\"id_rule\": \"0010101\",\n\t\"date_creation\": 1582914814192,\n\t\"date_change\": null,\n\t\"status\": \"Active\"\n}"
 						},
-						"description": ""
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/maritimebre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"maritimebre"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Find-ExecutionBRE",
 					"request": {
-						"url": "http://192.241.133.13:9100/businessrule/sa/executionbre",
 						"method": "GET",
 						"header": [
 							{
@@ -1368,18 +1266,28 @@
 								"value": "application/json"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/executionbre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"executionbre"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Find-RoadwayBRE",
 					"request": {
-						"url": "http://192.241.133.13:9100/businessrule/sa/roadwaybre",
 						"method": "GET",
 						"header": [
 							{
@@ -1388,18 +1296,31 @@
 								"value": "application/json"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/roadwaybre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"roadwaybre"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Find-AirwayBRE",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"url": "http://192.241.133.13:9100/businessrule/sa/airwaybre",
 						"method": "GET",
 						"header": [
 							{
@@ -1412,14 +1333,28 @@
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": ""
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/airwaybre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"airwaybre"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Find-MaritimewayBRE",
 					"request": {
-						"url": "http://192.241.133.13:9100/businessrule/sa/maritimebre",
 						"method": "GET",
 						"header": [
 							{
@@ -1428,1626 +1363,24 @@
 								"value": "application/json"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"description": ""
+						"url": {
+							"raw": "http://192.241.133.13:9100/businessrule/sa/maritimebre",
+							"protocol": "http",
+							"host": [
+								"192",
+								"241",
+								"133",
+								"13"
+							],
+							"port": "9100",
+							"path": [
+								"businessrule",
+								"sa",
+								"maritimebre"
+							]
+						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "Roadway-EA",
-			"description": "",
-			"item": [
-				{
-					"name": "Vehicle",
-					"description": "",
-					"item": [
-						{
-							"name": "Vehicle-Core",
-							"description": "",
-							"item": [
-								{
-									"name": "Vehicle-FindAll",
-									"request": {
-										"url": "http://192.241.133.13:9022/roadbrewa/vehicle/",
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "isoLanguageCode",
-												"value": "pt",
-												"description": ""
-											},
-											{
-												"key": "isoCountryCode",
-												"value": "BR",
-												"description": ""
-											},
-											{
-												"key": "isoCurrencyCode",
-												"value": "BRL",
-												"description": ""
-											},
-											{
-												"key": "originApp",
-												"value": "APP-MICROSERVICE",
-												"description": ""
-											}
-										],
-										"body": {},
-										"description": ""
-									},
-									"response": []
-								}
-							],
-							"_postman_isSubFolder": true
-						},
-						{
-							"name": "Vehicle-Classification",
-							"description": "",
-							"item": [
-								{
-									"name": "VehicleType-All",
-									"request": {
-										"url": "http://192.241.133.13:9022/roadbrewa/vehicle/type",
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "isoLanguageCode",
-												"value": "pt",
-												"description": ""
-											},
-											{
-												"key": "isoCountryCode",
-												"value": "BR",
-												"description": ""
-											},
-											{
-												"key": "isoCurrencyCode",
-												"value": "BRL",
-												"description": ""
-											},
-											{
-												"key": "originApp",
-												"value": "APP-MICROSERVICE",
-												"description": ""
-											}
-										],
-										"body": {},
-										"description": ""
-									},
-									"response": []
-								}
-							],
-							"_postman_isSubFolder": true
-						},
-						{
-							"name": "Vehicle-Type",
-							"description": "",
-							"item": [
-								{
-									"name": "VehicleClassification-All copy",
-									"request": {
-										"url": "http://192.241.133.13:9022/roadbrewa/vehicle/classification",
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "isoLanguageCode",
-												"value": "pt",
-												"description": ""
-											},
-											{
-												"key": "isoCountryCode",
-												"value": "BR",
-												"description": ""
-											},
-											{
-												"key": "isoCurrencyCode",
-												"value": "BRL",
-												"description": ""
-											},
-											{
-												"key": "originApp",
-												"value": "APP-MICROSERVICE",
-												"description": ""
-											}
-										],
-										"body": {},
-										"description": ""
-									},
-									"response": []
-								}
-							],
-							"_postman_isSubFolder": true
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Category",
-					"description": "",
-					"item": [
-						{
-							"name": "Core",
-							"description": "",
-							"item": [
-								{
-									"name": "Category-FindAll copy",
-									"request": {
-										"url": "http://192.241.133.13:9019/roadbrewa/category/",
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "isoLanguageCode",
-												"value": "pt",
-												"description": ""
-											},
-											{
-												"key": "isoCountryCode",
-												"value": "BR",
-												"description": ""
-											},
-											{
-												"key": "isoCurrencyCode",
-												"value": "BRL",
-												"description": ""
-											},
-											{
-												"key": "originApp",
-												"value": "APP-MICROSERVICE",
-												"description": ""
-											}
-										],
-										"body": {},
-										"description": ""
-									},
-									"response": []
-								},
-								{
-									"name": "Category-DELETE",
-									"request": {
-										"url": {
-											"raw": "http://192.241.133.13:9019/roadbrewa/category?id=603554b1cff47e0001662cb0",
-											"protocol": "http",
-											"host": [
-												"192",
-												"241",
-												"133",
-												"13"
-											],
-											"port": "9019",
-											"path": [
-												"roadbrewa",
-												"category"
-											],
-											"query": [
-												{
-													"key": "id",
-													"value": "603554b1cff47e0001662cb0",
-													"equals": true,
-													"description": ""
-												}
-											],
-											"variable": []
-										},
-										"method": "DELETE",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "isoLanguageCode",
-												"value": "pt",
-												"description": ""
-											},
-											{
-												"key": "isoCountryCode",
-												"value": "BR",
-												"description": ""
-											},
-											{
-												"key": "isoCurrencyCode",
-												"value": "BRL",
-												"description": ""
-											},
-											{
-												"key": "originApp",
-												"value": "APP-MICROSERVICE",
-												"description": ""
-											}
-										],
-										"body": {},
-										"description": ""
-									},
-									"response": []
-								}
-							],
-							"_postman_isSubFolder": true
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Simulation",
-					"description": "",
-					"item": [
-						{
-							"name": "Google-API",
-							"description": "",
-							"item": [
-								{
-									"name": "Google-API-Distancematrix",
-									"request": {
-										"url": {
-											"raw": "https://maps.googleapis.com/maps/api/distancematrix/json?destinations=-23.5844688,-46.6333236&origins=-28.6105131,-56.0147055&key=AIzaSyApaYMaysrLovkwCFmxnazfTaL0M4Ptz7g&units=metric&travel_mode=DRIVING",
-											"protocol": "https",
-											"host": [
-												"maps",
-												"googleapis",
-												"com"
-											],
-											"path": [
-												"maps",
-												"api",
-												"distancematrix",
-												"json"
-											],
-											"query": [
-												{
-													"key": "destinations",
-													"value": "-23.5844688,-46.6333236",
-													"equals": true,
-													"description": ""
-												},
-												{
-													"key": "origins",
-													"value": "-28.6105131,-56.0147055",
-													"equals": true,
-													"description": ""
-												},
-												{
-													"key": "key",
-													"value": "AIzaSyApaYMaysrLovkwCFmxnazfTaL0M4Ptz7g",
-													"equals": true,
-													"description": ""
-												},
-												{
-													"key": "units",
-													"value": "metric",
-													"equals": true,
-													"description": ""
-												},
-												{
-													"key": "travel_mode",
-													"value": "DRIVING",
-													"equals": true,
-													"description": ""
-												}
-											],
-											"variable": []
-										},
-										"method": "GET",
-										"header": [],
-										"body": {},
-										"description": ""
-									},
-									"response": []
-								},
-								{
-									"name": "Google-API-Geolocation",
-									"request": {
-										"url": {
-											"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=Brasil&travel_mode=DRIVING&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA&units=metric",
-											"protocol": "https",
-											"host": [
-												"maps",
-												"googleapis",
-												"com"
-											],
-											"path": [
-												"maps",
-												"api",
-												"geocode",
-												"json"
-											],
-											"query": [
-												{
-													"key": "address",
-													"value": "Brasil"
-												},
-												{
-													"key": "travel_mode",
-													"value": "DRIVING"
-												},
-												{
-													"key": "key",
-													"value": "AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA"
-												},
-												{
-													"key": "units",
-													"value": "metric"
-												}
-											],
-											"variable": []
-										},
-										"method": "GET",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
-										"description": ""
-									},
-									"response": []
-								},
-								{
-									"name": "Google-API-Directions",
-									"request": {
-										"url": {
-											"raw": "https://maps.googleapis.com/maps/api/directions/json?origin=R. Bartolomeu de Gusmão, 119 - Vila Mariana, São Paulo - SP, 04111-020, Brasil&destination=Rua Marcos Antônio Malucelli, 947 - Cidade Industrial De Curitiba, Curitiba - PR&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA&travel_mode=DRIVING&units=metric",
-											"protocol": "https",
-											"host": [
-												"maps",
-												"googleapis",
-												"com"
-											],
-											"path": [
-												"maps",
-												"api",
-												"directions",
-												"json"
-											],
-											"query": [
-												{
-													"key": "origin",
-													"value": "R. Bartolomeu de Gusmão, 119 - Vila Mariana, São Paulo - SP, 04111-020, Brasil",
-													"equals": true,
-													"description": ""
-												},
-												{
-													"key": "destination",
-													"value": "Rua Marcos Antônio Malucelli, 947 - Cidade Industrial De Curitiba, Curitiba - PR",
-													"equals": true,
-													"description": ""
-												},
-												{
-													"key": "key",
-													"value": "AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA",
-													"equals": true,
-													"description": ""
-												},
-												{
-													"key": "travel_mode",
-													"value": "DRIVING",
-													"equals": true,
-													"description": ""
-												},
-												{
-													"key": "avoidTolls",
-													"value": "false",
-													"disabled": true
-												},
-												{
-													"key": "units",
-													"value": "metric",
-													"equals": true,
-													"description": ""
-												}
-											],
-											"variable": []
-										},
-										"method": "GET",
-										"header": [],
-										"body": {},
-										"description": ""
-									},
-									"response": []
-								},
-								{
-									"name": "https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street&location=42.3675294,-71.186966&radius=10000&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n",
-									"request": {
-										"url": {
-											"raw": "https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street&location=42.3675294,-71.186966&radius=10000&key=AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA",
-											"protocol": "https",
-											"host": [
-												"maps",
-												"googleapis",
-												"com"
-											],
-											"path": [
-												"maps",
-												"api",
-												"place",
-												"textsearch",
-												"json"
-											],
-											"query": [
-												{
-													"key": "query",
-													"value": "123+main+street"
-												},
-												{
-													"key": "location",
-													"value": "42.3675294,-71.186966"
-												},
-												{
-													"key": "radius",
-													"value": "10000"
-												},
-												{
-													"key": "key",
-													"value": "AIzaSyDt5pgW0boE_KhyVZHpNAh-o7Z0dQWt2IA\n"
-												}
-											],
-											"variable": []
-										},
-										"method": "GET",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
-										"description": ""
-									},
-									"response": []
-								},
-								{
-									"name": "API-Distance",
-									"request": {
-										"url": "http://192.241.133.13:9099/api/google/distance/Rua Bartolomeu de Gusmao, 302, Sao Paulo/Rua Capitao Jose Jacitno de Andrade 785, Sao Joao da Boa Vista/metric",
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "isoLanguageCode",
-												"value": "pt",
-												"description": ""
-											},
-											{
-												"key": "isoCountryCode",
-												"value": "BR",
-												"description": ""
-											},
-											{
-												"key": "isoCurrencyCode",
-												"value": "BRL",
-												"description": ""
-											},
-											{
-												"key": "originApp",
-												"value": "APP-MICROSERVICE",
-												"description": ""
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n\t\"address_origin\" : \"R. Bartolomeu de Gusmão, 119 - Vila Mariana, São Paulo - SP, 04111-020, Brasil\",\r\n\t\"address_destination\" : \"Calle Plateros 326, Cusco 08002, Perú\",\r\n\t\"distances_places\" : 0,\r\n\t\"type_product\" : \"s\",\r\n\t\"weight_product\" : 10.1,\r\n\t\"type_delivery\" : \"0\",\r\n\t\"unity_measurement_weight\" : \"0\",\r\n\t\"unity_measurement_distance_txt\" : \"KM\"\r\n}\r\n"
-										},
-										"description": ""
-									},
-									"response": []
-								},
-								{
-									"name": "API-Tracking",
-									"request": {
-										"url": "http://192.241.133.13:9099/api/google/distance/Rua Capitao Jose Jacinto de Andrade, 785, Sao Joao da Boa Vista/ Rua Bartolomeu de Gusmao, 302, Sao Paulo/KM",
-										"method": "GET",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "isoLanguageCode",
-												"value": "pt",
-												"description": ""
-											},
-											{
-												"key": "isoCountryCode",
-												"value": "BR",
-												"description": ""
-											},
-											{
-												"key": "isoCurrencyCode",
-												"value": "BRL",
-												"description": ""
-											},
-											{
-												"key": "originApp",
-												"value": "APP-MICROSERVICE",
-												"description": ""
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n\t\"address_origin\" : \"R. Bartolomeu de Gusmão, 119 - Vila Mariana, São Paulo - SP, 04111-020, Brasil\",\r\n\t\"address_destination\" : \"Calle Plateros 326, Cusco 08002, Perú\",\r\n\t\"distances_places\" : 0,\r\n\t\"type_product\" : \"s\",\r\n\t\"weight_product\" : 10.1,\r\n\t\"type_delivery\" : \"0\",\r\n\t\"unity_measurement_weight\" : \"0\",\r\n\t\"unity_measurement_distance_txt\" : \"KM\"\r\n}\r\n"
-										},
-										"description": ""
-									},
-									"response": []
-								},
-								{
-									"name": "ADD:Execution",
-									"request": {
-										"url": "http://192.241.133.13:9100/businessrule/sa/execution",
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n\t\"id_rule\": \"0010101\",\r\n\t\"date_creation\": 1586203202207,\r\n\t\"date_change\": null,\r\n\t\"status\": \"Active\",\r\n\t\"unity_measurement_weight\": \"KG\",\r\n\t\"unity_measurement_distance\": \"KM\",\r\n\t\"currency_cost\": \"R$\",\r\n\t\"roadwayInstance\": {\r\n\t\t\"weight_max_roadway\": 300.0,\r\n\t\t\"allows_continents_roadway\": false\r\n\t},\r\n\t\"maritimewayInstance\": {\r\n\t\t\"distance_min_maritime\": 1250.42,\r\n\t\t\"weight_min_maritime\": 1.0,\r\n\t\t\"allows_continents_maritime\": true\r\n\t},\r\n\t\"airwayInstance\": {\r\n\t\t\"distance_min_airway\": 4250.42,\r\n\t\t\"weight_max_airway\": 3222.0,\r\n\t\t\"allows_continents_airway\": true\r\n\t}\r\n}"
-										},
-										"description": ""
-									},
-									"response": []
-								},
-								{
-									"name": "API-TrackingWay",
-									"request": {
-										"url": {
-											"raw": "http://192.241.133.13:9099/api/google/tracking?isoLanguageCode=pt&isoCountryCode=BR&isoCurrencyCode=BRL&originApp=APP-MICROSERVICE",
-											"protocol": "http",
-											"host": [
-												"192",
-												"241",
-												"133",
-												"13"
-											],
-											"port": "9099",
-											"path": [
-												"api",
-												"google",
-												"tracking"
-											],
-											"query": [
-												{
-													"key": "isoLanguageCode",
-													"value": "pt"
-												},
-												{
-													"key": "isoCountryCode",
-													"value": "BR"
-												},
-												{
-													"key": "isoCurrencyCode",
-													"value": "BRL"
-												},
-												{
-													"key": "originApp",
-													"value": "APP-MICROSERVICE"
-												}
-											],
-											"variable": []
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"type": "text",
-												"value": "application/json"
-											},
-											{
-												"key": "Content-Type",
-												"name": "Content-Type",
-												"type": "text",
-												"value": "application/json"
-											},
-											{
-												"key": "isoLanguageCode",
-												"value": "pt",
-												"type": "text"
-											},
-											{
-												"key": "isoCountryCode",
-												"value": "BR",
-												"type": "text"
-											},
-											{
-												"key": "isoCurrencyCode",
-												"value": "BRL",
-												"type": "text"
-											},
-											{
-												"key": "originApp",
-												"value": "APP-MICROSERVICE",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n\t\"address_origin\" : \"Comodoro Rivadavia, Chubut, Argentina\",\r\n\t\"address_destination\" : \"Caracas, Distrito Capital, Venezuela\",\r\n\t\"type_product\" : \"s\",\r\n\t\"weight_product\" : 10.1,\r\n\t\"type_delivery\" : \"0\",\r\n\t\"unity_measurement_weight\" : \"0\",\r\n\t\"unity_measurement_distance_txt\" : \"KM\"\r\n}"
-										},
-										"description": ""
-									},
-									"response": []
-								}
-							],
-							"_postman_isSubFolder": true
-						},
-						{
-							"name": "Core",
-							"description": "",
-							"item": [
-								{
-									"name": "GET-Simulation",
-									"request": {
-										"url": "http://192.241.133.13:9199/roadway/simulation",
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "isoLanguageCode",
-												"value": "pt",
-												"description": ""
-											},
-											{
-												"key": "isoCountryCode",
-												"value": "BR",
-												"description": ""
-											},
-											{
-												"key": "isoCurrencyCode",
-												"value": "BRL",
-												"description": ""
-											},
-											{
-												"key": "originApp",
-												"value": "APP-MICROSERVICE",
-												"description": ""
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "address_origin",
-													"value": "Rua Bartolomeu de Gusmao, 302, Sao Paulo",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "address_destination",
-													"value": "Rua Capitao Jose Jacinto de Andrade, 785, Sao Joao da Boa Vista",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "type_transport",
-													"value": "Transporte Carga Unitário",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "product_transport",
-													"value": "Celular",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "people",
-													"value": "0",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "weight_max",
-													"value": "5.0",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "unity_weight",
-													"value": "Kilograma",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "height_max",
-													"value": "15.0",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "width_max",
-													"value": "5.0",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "length_max",
-													"value": "2.0",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "delivery_type",
-													"value": "normal",
-													"description": "",
-													"type": "text"
-												}
-											]
-										},
-										"description": ""
-									},
-									"response": []
-								},
-								{
-									"name": "GET-Simulation",
-									"request": {
-										"url": "http://192.241.133.13:9199/roadway/simulation",
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"description": ""
-											},
-											{
-												"key": "isoLanguageCode",
-												"value": "pt",
-												"description": ""
-											},
-											{
-												"key": "isoCountryCode",
-												"value": "BR",
-												"description": ""
-											},
-											{
-												"key": "isoCurrencyCode",
-												"value": "BRL",
-												"description": ""
-											},
-											{
-												"key": "originApp",
-												"value": "APP-MICROSERVICE",
-												"description": ""
-											}
-										],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "address_origin",
-													"value": "Rua Bartolomeu de Gusmao, 302, Sao Paulo",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "address_destination",
-													"value": "Rua Capitao Jose Jacinto de Andrade, 785, Sao Joao da Boa Vista",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "type_transport",
-													"value": "Transporte Carga Unitário",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "product_transport",
-													"value": "Celular",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "people",
-													"value": "0",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "weight_max",
-													"value": "5.0",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "unity_weight",
-													"value": "Kilograma",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "height_max",
-													"value": "15.0",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "width_max",
-													"value": "5.0",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "length_max",
-													"value": "2.0",
-													"description": "",
-													"type": "text"
-												},
-												{
-													"key": "delivery_type",
-													"value": "normal",
-													"description": "",
-													"type": "text"
-												}
-											]
-										},
-										"description": ""
-									},
-									"response": []
-								}
-							],
-							"_postman_isSubFolder": true
-						},
-						{
-							"name": "Exchange-API",
-							"description": "",
-							"item": [
-								{
-									"name": "CurrconvAPI",
-									"request": {
-										"url": {
-											"raw": "https://api.currconv.com/api/v7/convert?q=USD_BRL&compact=ultra&apiKey=04c61caf75c34f76aee14e8eff3e7304",
-											"protocol": "https",
-											"host": [
-												"api",
-												"currconv",
-												"com"
-											],
-											"path": [
-												"api",
-												"v7",
-												"convert"
-											],
-											"query": [
-												{
-													"key": "q",
-													"value": "USD_BRL"
-												},
-												{
-													"key": "compact",
-													"value": "ultra"
-												},
-												{
-													"key": "apiKey",
-													"value": "04c61caf75c34f76aee14e8eff3e7304"
-												}
-											],
-											"variable": []
-										},
-										"method": "GET",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
-										"description": ""
-									},
-									"response": []
-								},
-								{
-									"name": "GET-Exchange",
-									"request": {
-										"url": "http://192.241.133.13:9200/api/exchange/rate/BRL",
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
-										"description": ""
-									},
-									"response": []
-								},
-								{
-									"name": "CurrConv-ListCountries",
-									"request": {
-										"url": {
-											"raw": "https://api.currconv.com/api/v7/countries?apiKey=04c61caf75c34f76aee14e8eff3e7304",
-											"protocol": "https",
-											"host": [
-												"api",
-												"currconv",
-												"com"
-											],
-											"path": [
-												"api",
-												"v7",
-												"countries"
-											],
-											"query": [
-												{
-													"key": "apiKey",
-													"value": "04c61caf75c34f76aee14e8eff3e7304"
-												}
-											],
-											"variable": []
-										},
-										"method": "GET",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
-										"description": ""
-									},
-									"response": []
-								},
-								{
-									"name": "GET-ExchangeListCountry",
-									"request": {
-										"url": "http://192.241.133.13:9200/api/exchange/country/BR",
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
-										"description": ""
-									},
-									"response": []
-								}
-							],
-							"_postman_isSubFolder": true
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Core",
-					"description": "",
-					"item": [
-						{
-							"name": "Roadway-FindAll",
-							"request": {
-								"url": "http://192.241.133.13:9018/roadbrewa/roadway/",
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"description": ""
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"description": ""
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"description": ""
-									},
-									{
-										"key": "originApp",
-										"value": "APP-MICROSERVICE",
-										"description": ""
-									}
-								],
-								"body": {},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "Roadway-POST",
-							"request": {
-								"url": "http://192.241.133.13:9018/roadbrewa/roadway/",
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"description": ""
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"description": ""
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"description": ""
-									},
-									{
-										"key": "originApp",
-										"value": "APP-MICROSERVICE",
-										"description": ""
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n                \"id\": \"5fdce9b552faff0001e023f3\",\n                \"name_bre\": \"BRE-CAT_S-Transporte Carga Seca\",\n                \"transport\": \"Transporte Carga Seca\",\n                \"blocked_id\": null,\n                \"date_creation\": \"2020-12-18T17:45:29.353Z\",\n                \"date_change\": null,\n                \"categories\": [\n                    {\n                        \"id\": null,\n                        \"name_category\": \"CAT_S\",\n                        \"transport\": \"Transporte Carga Seca\",\n                        \"weight_max\": 50,\n                        \"people_max\": 0,\n                        \"unity_weight\": {\n                            \"3\": \"Tonelada\"\n                        },\n                        \"vehicles\": [\n                            {\n                                \"id\": null,\n                                \"category_vehicle\": null,\n                                \"type_vehicle\": null,\n                                \"classification_vehicle\": null,\n                                \"subclassification_vehicle\": null,\n                                \"transport_type\": \"Cargo\",\n                                \"weight_max\": 40,\n                                \"unity_weight\": {\n                                    \"3\": \"Tonelada\"\n                                },\n                                \"axis_total\": 7,\n                                \"people_max\": 0,\n                                \"height_dimension_max\": null,\n                                \"width_dimension_max\": null,\n                                \"length_dimension_max\": null,\n                                \"fuel_consumption\": null,\n                                \"bodywork_vehicle\": \"\"\n                            },\n                            {\n                                \"id\": null,\n                                \"category_vehicle\": null,\n                                \"type_vehicle\": null,\n                                \"classification_vehicle\": null,\n                                \"subclassification_vehicle\": null,\n                                \"transport_type\": \"Cargo\",\n                                \"weight_max\": 50,\n                                \"unity_weight\": {\n                                    \"3\": \"Tonelada\"\n                                },\n                                \"axis_total\": 7,\n                                \"people_max\": 0,\n                                \"height_dimension_max\": null,\n                                \"width_dimension_max\": null,\n                                \"length_dimension_max\": null,\n                                \"fuel_consumption\": null,\n                                \"bodywork_vehicle\": \"\"\n                            }\n                        ],\n                        \"dt_inc\": \"2020-11-30T22:34:02.219+0000\",\n                        \"dt_update\": null\n                    }\n                ],\n                \"costs\": [\n                    {\n                        \"countryName\": \"Brazil (+55)\",\n                        \"vehicle\": \"Bi-truck\",\n                        \"weight_cost\": 2,\n                        \"distance_cost\": 3,\n                        \"worktime_cost\": 4,\n                        \"average_consumption_cost\": 5,\n                        \"currency_symbol\": \"R$\",\n                        \"currency\": \"REAL$\",\n                        \"statusChange\": true\n                    },\n                    {\n                        \"countryName\": \"Brazil (+55)\",\n                        \"vehicle\": \"Truck Pesado\",\n                        \"weight_cost\": 0,\n                        \"distance_cost\": 0,\n                        \"worktime_cost\": 0,\n                        \"average_consumption_cost\": 0,\n                        \"currency_symbol\": \"R$\",\n                        \"currency\": \"REAL$\",\n                        \"statusChange\": false\n                    }\n                ],\n                \"locations\": [\n                    {\n                        \"id\": null,\n                        \"codCountry\": \"+55\",\n                        \"countryName\": \"Brazil (+55)\",\n                        \"countryShortName\": null,\n                        \"identifier\": \"BR\",\n                        \"citySpecify\": false,\n                        \"cities\": []\n                    }\n                ],\n                \"version\": \"1.0.0.1.0\",\n                \"status\": \"PUBLISHED\"\n            }"
-								},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "Roadway-DELETEAll",
-							"request": {
-								"url": {
-									"raw": "http://192.241.133.13:9018/roadbrewa/roadway/all?id=606a2d6ad601800001f334f0",
-									"protocol": "http",
-									"host": [
-										"192",
-										"241",
-										"133",
-										"13"
-									],
-									"port": "9018",
-									"path": [
-										"roadbrewa",
-										"roadway",
-										"all"
-									],
-									"query": [
-										{
-											"key": "id",
-											"value": "606a2d6ad601800001f334f0",
-											"equals": true,
-											"description": ""
-										}
-									],
-									"variable": []
-								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"description": ""
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"description": ""
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"description": ""
-									},
-									{
-										"key": "originApp",
-										"value": "APP-MICROSERVICE",
-										"description": ""
-									}
-								],
-								"body": {},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "Roadway-DELETE",
-							"request": {
-								"url": {
-									"raw": "http://192.241.133.13:9018/roadbrewa/roadway?id=5fdd260352faff0001e023f9",
-									"protocol": "http",
-									"host": [
-										"192",
-										"241",
-										"133",
-										"13"
-									],
-									"port": "9018",
-									"path": [
-										"roadbrewa",
-										"roadway"
-									],
-									"query": [
-										{
-											"key": "id",
-											"value": "5fdd260352faff0001e023f9",
-											"equals": true,
-											"description": ""
-										}
-									],
-									"variable": []
-								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"description": ""
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"description": ""
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"description": ""
-									},
-									{
-										"key": "originApp",
-										"value": "APP-MICROSERVICE",
-										"description": ""
-									}
-								],
-								"body": {},
-								"description": ""
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "TollsFuel",
-					"description": "",
-					"item": [
-						{
-							"name": "TollsFuel",
-							"request": {
-								"url": {
-									"raw": "http://192.241.133.13:9018/roadbrewa/roadway/tollsfuel?country=Brazil",
-									"protocol": "http",
-									"host": [
-										"192",
-										"241",
-										"133",
-										"13"
-									],
-									"port": "9018",
-									"path": [
-										"roadbrewa",
-										"roadway",
-										"tollsfuel"
-									],
-									"query": [
-										{
-											"key": "country",
-											"value": "Brazil",
-											"equals": true,
-											"description": ""
-										}
-									],
-									"variable": []
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"description": ""
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"description": ""
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"description": ""
-									},
-									{
-										"key": "originApp",
-										"value": "APP-MICROSERVICE",
-										"description": ""
-									}
-								],
-								"body": {},
-								"description": ""
-							},
-							"response": []
-						},
-						{
-							"name": "TollsFuel",
-							"request": {
-								"url": {
-									"raw": "http://192.241.133.13:9018/roadbrewa/roadway/tollsfuel?id=Brazil",
-									"protocol": "http",
-									"host": [
-										"192",
-										"241",
-										"133",
-										"13"
-									],
-									"port": "9018",
-									"path": [
-										"roadbrewa",
-										"roadway",
-										"tollsfuel"
-									],
-									"query": [
-										{
-											"key": "id",
-											"value": "Brazil",
-											"equals": true,
-											"description": ""
-										}
-									],
-									"variable": []
-								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"description": ""
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"description": ""
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"description": ""
-									},
-									{
-										"key": "originApp",
-										"value": "APP-MICROSERVICE",
-										"description": ""
-									}
-								],
-								"body": {},
-								"description": ""
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "LifeStatus",
-					"description": "",
-					"item": [
-						{
-							"name": "Roadway-Published",
-							"request": {
-								"url": {
-									"raw": "http://192.241.133.13:9018/roadbrewa/roadway/published?id=213132&transport=sdfsd",
-									"protocol": "http",
-									"host": [
-										"192",
-										"241",
-										"133",
-										"13"
-									],
-									"port": "9018",
-									"path": [
-										"roadbrewa",
-										"roadway",
-										"published"
-									],
-									"query": [
-										{
-											"key": "id",
-											"value": "213132",
-											"equals": true,
-											"description": ""
-										},
-										{
-											"key": "transport",
-											"value": "sdfsd",
-											"equals": true,
-											"description": ""
-										}
-									],
-									"variable": []
-								},
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"description": ""
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"description": ""
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"description": ""
-									},
-									{
-										"key": "originApp",
-										"value": "APP-MICROSERVICE",
-										"description": ""
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n                \"id\": \"5fdce9b552faff0001e023f3\",\n                \"name_bre\": \"BRE-CAT_S-Transporte Carga Seca\",\n                \"transport\": \"Transporte Carga Seca\",\n                \"blocked_id\": null,\n                \"date_creation\": \"2020-12-18T17:45:29.353Z\",\n                \"date_change\": null,\n                \"categories\": [\n                    {\n                        \"id\": null,\n                        \"name_category\": \"CAT_S\",\n                        \"transport\": \"Transporte Carga Seca\",\n                        \"weight_max\": 50,\n                        \"people_max\": 0,\n                        \"unity_weight\": {\n                            \"3\": \"Tonelada\"\n                        },\n                        \"vehicles\": [\n                            {\n                                \"id\": null,\n                                \"category_vehicle\": null,\n                                \"type_vehicle\": null,\n                                \"classification_vehicle\": null,\n                                \"subclassification_vehicle\": null,\n                                \"transport_type\": \"Cargo\",\n                                \"weight_max\": 40,\n                                \"unity_weight\": {\n                                    \"3\": \"Tonelada\"\n                                },\n                                \"axis_total\": 7,\n                                \"people_max\": 0,\n                                \"height_dimension_max\": null,\n                                \"width_dimension_max\": null,\n                                \"length_dimension_max\": null,\n                                \"fuel_consumption\": null,\n                                \"bodywork_vehicle\": \"\"\n                            },\n                            {\n                                \"id\": null,\n                                \"category_vehicle\": null,\n                                \"type_vehicle\": null,\n                                \"classification_vehicle\": null,\n                                \"subclassification_vehicle\": null,\n                                \"transport_type\": \"Cargo\",\n                                \"weight_max\": 50,\n                                \"unity_weight\": {\n                                    \"3\": \"Tonelada\"\n                                },\n                                \"axis_total\": 7,\n                                \"people_max\": 0,\n                                \"height_dimension_max\": null,\n                                \"width_dimension_max\": null,\n                                \"length_dimension_max\": null,\n                                \"fuel_consumption\": null,\n                                \"bodywork_vehicle\": \"\"\n                            }\n                        ],\n                        \"dt_inc\": \"2020-11-30T22:34:02.219+0000\",\n                        \"dt_update\": null\n                    }\n                ],\n                \"costs\": [\n                    {\n                        \"countryName\": \"Brazil (+55)\",\n                        \"vehicle\": \"Bi-truck\",\n                        \"weight_cost\": 2,\n                        \"distance_cost\": 3,\n                        \"worktime_cost\": 4,\n                        \"average_consumption_cost\": 5,\n                        \"currency_symbol\": \"R$\",\n                        \"currency\": \"REAL$\",\n                        \"statusChange\": true\n                    },\n                    {\n                        \"countryName\": \"Brazil (+55)\",\n                        \"vehicle\": \"Truck Pesado\",\n                        \"weight_cost\": 0,\n                        \"distance_cost\": 0,\n                        \"worktime_cost\": 0,\n                        \"average_consumption_cost\": 0,\n                        \"currency_symbol\": \"R$\",\n                        \"currency\": \"REAL$\",\n                        \"statusChange\": false\n                    }\n                ],\n                \"locations\": [\n                    {\n                        \"id\": null,\n                        \"codCountry\": \"+55\",\n                        \"countryName\": \"Brazil (+55)\",\n                        \"countryShortName\": null,\n                        \"identifier\": \"BR\",\n                        \"citySpecify\": false,\n                        \"cities\": []\n                    }\n                ],\n                \"version\": \"1.0.0.1.0\",\n                \"status\": \"PUBLISHED\"\n            }"
-								},
-								"description": ""
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Location",
-					"description": "",
-					"item": [
-						{
-							"name": "Location",
-							"request": {
-								"url": "http://192.241.133.13:9021/roadbrewa/location/",
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"description": ""
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"description": ""
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"description": ""
-									},
-									{
-										"key": "originApp",
-										"value": "APP-MICROSERVICE",
-										"description": ""
-									}
-								],
-								"body": {},
-								"description": ""
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Transport",
-					"description": "",
-					"item": [
-						{
-							"name": "Transport",
-							"request": {
-								"url": {
-									"raw": "http://192.241.133.13:9018/roadbrewa/roadway/tollsfuel?country=Brazil",
-									"protocol": "http",
-									"host": [
-										"192",
-										"241",
-										"133",
-										"13"
-									],
-									"port": "9018",
-									"path": [
-										"roadbrewa",
-										"roadway",
-										"tollsfuel"
-									],
-									"query": [
-										{
-											"key": "country",
-											"value": "Brazil",
-											"equals": true,
-											"description": ""
-										}
-									],
-									"variable": []
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"description": ""
-									},
-									{
-										"key": "isoLanguageCode",
-										"value": "pt",
-										"description": ""
-									},
-									{
-										"key": "isoCountryCode",
-										"value": "BR",
-										"description": ""
-									},
-									{
-										"key": "isoCurrencyCode",
-										"value": "BRL",
-										"description": ""
-									},
-									{
-										"key": "originApp",
-										"value": "APP-MICROSERVICE",
-										"description": ""
-									}
-								],
-								"body": {},
-								"description": ""
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
 				}
 			]
 		}
